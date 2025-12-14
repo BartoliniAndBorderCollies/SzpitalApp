@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzpitalApp", "SzpitalApp\SzpitalApp.csproj", "{57FB7F58-881F-4498-9F8D-57C4FA1639B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelSzpitala", "ModelSzpitala\ModelSzpitala.csproj", "{4BCF891B-8AFF-4C43-8B49-11A9B54217E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57FB7F58-881F-4498-9F8D-57C4FA1639B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57FB7F58-881F-4498-9F8D-57C4FA1639B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57FB7F58-881F-4498-9F8D-57C4FA1639B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57FB7F58-881F-4498-9F8D-57C4FA1639B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BCF891B-8AFF-4C43-8B49-11A9B54217E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BCF891B-8AFF-4C43-8B49-11A9B54217E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BCF891B-8AFF-4C43-8B49-11A9B54217E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BCF891B-8AFF-4C43-8B49-11A9B54217E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67FB0701-3D0A-4A4F-B234-DCDEDEABDC85}
+	EndGlobalSection
+EndGlobal
