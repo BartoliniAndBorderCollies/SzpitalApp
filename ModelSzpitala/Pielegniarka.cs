@@ -28,7 +28,7 @@ namespace ModelSzpitala
                 return;
             }
 
-            if(SprawdzDyzurDzienPoDniu(dyzur))
+            if (SprawdzDyzurDzienPoDniu(dyzur))
             {
                 Console.WriteLine("Nie można mieć dyzuru dzień po dniu");
                 return;
@@ -40,8 +40,12 @@ namespace ModelSzpitala
 
         private bool SprawdzDyzurDzienPoDniu(Dyzur dyzur)
         {
-            foreach (Dyzur d in _listaDyzurow) {
-                if(dyzur.DataRozpoczecia.Date == d.DataZakonczenia.Date.AddDays(1) || dyzur.DataRozpoczecia.Date == d.DataRozpoczecia.Date.AddDays(-1))
+
+            foreach (Dyzur d in _listaDyzurow)
+            {
+                if (dyzur.DataRozpoczecia.Date == d.DataZakonczenia.Date.AddDays(1) ||
+                    dyzur.DataRozpoczecia.Date == d.DataRozpoczecia.Date.AddDays(-1) ||
+                    dyzur.DataRozpoczecia.Date == d.DataZakonczenia.Date)
                 {
                     return true;
                 }
@@ -62,7 +66,7 @@ namespace ModelSzpitala
                 {
                     liczbaDyzurowDanyMiesiac++;
                 }
-       
+
             }
 
             return liczbaDyzurowDanyMiesiac;
