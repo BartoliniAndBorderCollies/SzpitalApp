@@ -23,6 +23,14 @@ namespace ModelSzpitala
             }
         }
 
+        public List<Dyzur> PokazListeDyzurow
+        {
+            get
+            {
+                return _listaDyzurow;
+            }
+        }
+
         public override string ToString()
         {
             return base.ToString() + $"\nSpecjalność: {_specjalnosc}, Numer PWZ: {_numerPWZ}";
@@ -32,6 +40,12 @@ namespace ModelSzpitala
         public IReadOnlyList<Pracownik> WyswietlListeLekarzyPielegniarek()
         {
             return Szpital.SzpitalInstance.WyswietlListeLekarzyPielegniarek();
+        }
+
+        public IReadOnlyList<Dyzur> PokazDyzurWybranejOsoby(string imie, string nazwisko)
+        { 
+            return Szpital.SzpitalInstance.PokazDyzurWybranejOsoby(imie, nazwisko);
+
         }
 
 

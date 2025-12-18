@@ -20,6 +20,14 @@ namespace ModelSzpitala
             }
         }
 
+        public List<Dyzur> PokazListeDyzurow
+        {
+            get
+            {
+                return _listaDyzurow;
+            }
+        }
+
         public override string ToString()
         {
             return base.ToString();
@@ -47,6 +55,12 @@ namespace ModelSzpitala
 
             _listaDyzurow.Add(dyzur);
             Console.WriteLine("Dodano dyżur");
+        }
+
+        public IReadOnlyList<Dyzur> PokazDyzurWybranejOsoby(string imie, string nazwisko)
+        {
+            return Szpital.SzpitalInstance.PokazDyzurWybranejOsoby(imie, nazwisko);
+
         }
 
         private bool SprawdzDyzurDzienPoDniu(Dyzur dyzur)

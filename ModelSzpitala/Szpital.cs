@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -104,6 +105,27 @@ namespace ModelSzpitala
 
             return listaLekarzyPielegniarek;
 
+        }
+
+        public IReadOnlyList<Dyzur> PokazDyzurWybranejOsoby(string imie, string nazwisko)
+        {
+
+            IReadOnlyList<Dyzur> listaDyzurow = new List<Dyzur>();
+
+            foreach (Pracownik pracownik in _listaPracownikow)
+            {
+                if(pracownik.Imie == imie && pracownik.Nazwisko == nazwisko && pracownik is Lekarz lekarz)
+                {
+                    listaDyzurow = lekarz.PokazListeDyzurow; 
+                }
+
+                if (pracownik.Imie == imie && pracownik.Nazwisko == nazwisko && pracownik is Pielegniarka pielegniarka)
+                {
+                    listaDyzurow = pielegniarka.PokazListeDyzurow;
+                }
+            }
+
+            return listaDyzurow.ToList();
         }
     }
 }
