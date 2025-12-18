@@ -18,6 +18,11 @@
 
         }
 
+        public override string ToString()
+        {
+            return $"Imię: {Imie}, Nazwisko: {Nazwisko}, Pesel: {Pesel}, Nazwa użytkownika: {NazwaUzytkownika}";
+        }
+
 
     }
 }

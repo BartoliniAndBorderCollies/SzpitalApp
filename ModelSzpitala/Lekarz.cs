@@ -23,6 +23,17 @@ namespace ModelSzpitala
             }
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + $"\nSpecjalność: {_specjalnosc}, Numer PWZ: {_numerPWZ}";
+        }
+
+
+        public IReadOnlyList<Pracownik> WyswietlListeLekarzyPielegniarek()
+        {
+            return Szpital.SzpitalInstance.WyswietlListeLekarzyPielegniarek();
+        }
+
 
         public void DodajDyzur(Dyzur dyzur)
         {

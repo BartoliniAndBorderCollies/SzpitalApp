@@ -20,6 +20,17 @@ namespace ModelSzpitala
             }
         }
 
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public IReadOnlyList<Pracownik> WyswietlListeLekarzyPielegniarek()
+        {
+            return Szpital.SzpitalInstance.WyswietlListeLekarzyPielegniarek();
+
+        }
+
         public void DodajDyzur(Dyzur dyzur)
         {
             if (SprawdzLiczbeDyzurowWMiesiacu(dyzur) >= 10)
