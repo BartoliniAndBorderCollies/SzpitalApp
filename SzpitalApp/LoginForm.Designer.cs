@@ -28,12 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            txtLogin = new TextBox();
+            textHaslo = new TextBox();
+            btnZaloguj = new Button();
+            SuspendLayout();
+            // 
+            // txtLogin
+            // 
+            txtLogin.Location = new Point(265, 111);
+            txtLogin.Name = "txtLogin";
+            txtLogin.PlaceholderText = "Login";
+            txtLogin.Size = new Size(311, 39);
+            txtLogin.TabIndex = 0;
+            // 
+            // textHaslo
+            // 
+            textHaslo.Location = new Point(265, 203);
+            textHaslo.Name = "textHaslo";
+            textHaslo.PlaceholderText = "Hasło";
+            textHaslo.Size = new Size(311, 39);
+            textHaslo.TabIndex = 1;
+            textHaslo.UseSystemPasswordChar = true;
+            // 
+            // btnZaloguj
+            // 
+            btnZaloguj.BackColor = SystemColors.GradientActiveCaption;
+            btnZaloguj.Location = new Point(327, 282);
+            btnZaloguj.Name = "btnZaloguj";
+            btnZaloguj.Size = new Size(150, 46);
+            btnZaloguj.TabIndex = 2;
+            btnZaloguj.Text = "Zaloguj";
+            btnZaloguj.UseVisualStyleBackColor = false;
+            // 
+            // LoginForm
+            // 
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnZaloguj);
+            Controls.Add(textHaslo);
+            Controls.Add(txtLogin);
+            Name = "LoginForm";
+            Text = "Logowanie";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox txtLogin;
+        private TextBox textHaslo;
+        private Button btnZaloguj;
     }
 }
