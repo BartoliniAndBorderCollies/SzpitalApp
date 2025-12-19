@@ -127,5 +127,31 @@ namespace ModelSzpitala
 
             return listaDyzurow.ToList();
         }
+
+        internal bool CzyDyzurMaLekarzTakaSamaSpecjalizacja(Lekarz lekarz, Dyzur dyzur)
+        {
+            DateTime dataDyzuru = dyzur.DataRozpoczecia.Date;
+            Specjalnosc specjalnoscLekarza = lekarz.PokazSpecjalnosc;
+
+            foreach (Pracownik pracownik in _listaPracownikow)
+            {
+               
+                if(pracownik is Lekarz lekarzZListyDyzurow && 
+                    lekarzZListyDyzurow.PokazSpecjalnosc == specjalnoscLekarza &&
+                    lekarzZListyDyzurow != lekarz)
+                {
+                    foreach(Dyzur dyzuryLekarzaZListy in lekarzZListyDyzurow.PokazListeDyzurow)
+                    {
+                        if(dyzuryLekarzaZListy.DataRozpoczecia.Date == dataDyzuru)
+                        {
+                            return true;
+                        }
+
+                    }
+                }
+            }
+            return false;
+
+        }
     }
 }

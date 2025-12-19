@@ -23,6 +23,14 @@ namespace ModelSzpitala
             }
         }
 
+        public Specjalnosc PokazSpecjalnosc
+        {
+            get
+            {
+                return _specjalnosc;
+            }
+        }
+
         public List<Dyzur> PokazListeDyzurow
         {
             get
@@ -64,7 +72,14 @@ namespace ModelSzpitala
                 return;
             }
 
+            if (Szpital.SzpitalInstance.CzyDyzurMaLekarzTakaSamaSpecjalizacja(this, dyzur))
+            {
+                Console.WriteLine("W tym dniu dyżur ma już lekarz z tą specjalizacją");
+                return;
+            }
+
             _listaDyzurow.Add(dyzur);
+            Console.WriteLine("Dyżur dodany");
         }
 
         private bool SprawdzDyzurDzienPoDniu(Dyzur dyzur)
