@@ -31,6 +31,11 @@ namespace SzpitalApp
             else if (pracownik is Administrator)
             {
                 MessageBox.Show("Logowanie jako administrator");
+
+                AdminPanel adminPanel = new AdminPanel();
+                adminPanel.Show();
+
+                this.Hide();
             }
             else
             {

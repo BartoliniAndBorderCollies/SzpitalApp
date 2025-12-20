@@ -28,12 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AdminPanel";
+            panelAdmina = new Panel();
+            panelContent = new Panel();
+            btnListaPracownikow = new Button();
+            btnDodajPracownika = new Button();
+            panelAdmina.SuspendLayout();
+            panelContent.SuspendLayout();
+            SuspendLayout();
+            // 
+            // panelAdmina
+            // 
+            panelAdmina.BackgroundImage = Properties.Resources.Da_Vinci_Vitruve_Luc_Viatour1;
+            panelAdmina.Controls.Add(panelContent);
+            panelAdmina.Dock = DockStyle.Fill;
+            panelAdmina.Location = new Point(0, 0);
+            panelAdmina.Name = "panelAdmina";
+            panelAdmina.Size = new Size(800, 450);
+            panelAdmina.TabIndex = 0;
+            // 
+            // panelContent
+            // 
+            panelContent.Anchor = AnchorStyles.None;
+            panelContent.Controls.Add(btnDodajPracownika);
+            panelContent.Controls.Add(btnListaPracownikow);
+            panelContent.Location = new Point(74, 31);
+            panelContent.Name = "panelContent";
+            panelContent.Size = new Size(646, 378);
+            panelContent.TabIndex = 0;
+            // 
+            // btnListaPracownikow
+            // 
+            btnListaPracownikow.Anchor = AnchorStyles.None;
+            btnListaPracownikow.Location = new Point(59, 72);
+            btnListaPracownikow.Name = "btnListaPracownikow";
+            btnListaPracownikow.Size = new Size(164, 80);
+            btnListaPracownikow.TabIndex = 0;
+            btnListaPracownikow.Text = "Lista pracowników";
+            btnListaPracownikow.UseVisualStyleBackColor = true;
+            // 
+            // btnDodajPracownika
+            // 
+            btnDodajPracownika.Anchor = AnchorStyles.None;
+            btnDodajPracownika.Location = new Point(59, 196);
+            btnDodajPracownika.Name = "btnDodajPracownika";
+            btnDodajPracownika.Size = new Size(164, 75);
+            btnDodajPracownika.TabIndex = 1;
+            btnDodajPracownika.Text = "Dodaj pracownika";
+            btnDodajPracownika.UseVisualStyleBackColor = true;
+            // 
+            // AdminPanel
+            // 
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(panelAdmina);
+            Name = "AdminPanel";
+            Text = "AdminPanel";
+            panelAdmina.ResumeLayout(false);
+            panelContent.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel panelAdmina;
+        private Panel panelContent;
+        private Button btnListaPracownikow;
+        private Button btnDodajPracownika;
     }
 }
