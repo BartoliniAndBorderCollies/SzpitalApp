@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModelSzpitala
 {
-    internal class Dyzur
+    public class Dyzur
     {
         public Pracownik Pracownik {  get; set; }
         public DateTime DataRozpoczecia { get; set; }

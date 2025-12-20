@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace ModelSzpitala
 {
-    internal class Szpital
+    public class Szpital
     {
         //SINGELTON
-        private static Szpital _szpital;
+        private static Szpital? _szpital;
 
         private readonly List<Pracownik> _listaPracownikow = new List<Pracownik>();
 
@@ -153,6 +153,19 @@ namespace ModelSzpitala
             }
             return false;
 
+        }
+
+        public Pracownik? Zaloguj(string user, string haslo)
+        {
+            foreach(Pracownik pracownik in _listaPracownikow)
+            {
+                if(pracownik.NazwaUzytkownika == user && pracownik.Haslo == haslo)
+                {
+                    return pracownik;
+                }
+
+            }
+                return null;
         }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             txtLogin = new TextBox();
-            textHaslo = new TextBox();
+            txtHaslo = new TextBox();
             btnZaloguj = new Button();
             label1 = new Label();
             panel1 = new Panel();
@@ -46,14 +46,14 @@
             txtLogin.Size = new Size(311, 39);
             txtLogin.TabIndex = 0;
             // 
-            // textHaslo
+            // txtHaslo
             // 
-            textHaslo.Location = new Point(335, 239);
-            textHaslo.Name = "textHaslo";
-            textHaslo.PlaceholderText = "Hasło";
-            textHaslo.Size = new Size(311, 39);
-            textHaslo.TabIndex = 1;
-            textHaslo.UseSystemPasswordChar = true;
+            txtHaslo.Location = new Point(335, 239);
+            txtHaslo.Name = "txtHaslo";
+            txtHaslo.PlaceholderText = "Hasło";
+            txtHaslo.Size = new Size(311, 39);
+            txtHaslo.TabIndex = 1;
+            txtHaslo.UseSystemPasswordChar = true;
             // 
             // btnZaloguj
             // 
@@ -65,6 +65,7 @@
             btnZaloguj.TabIndex = 2;
             btnZaloguj.Text = "Zaloguj";
             btnZaloguj.UseVisualStyleBackColor = false;
+            btnZaloguj.Click += btnZaloguj_Click;
             // 
             // label1
             // 
@@ -82,7 +83,7 @@
             panel1.Anchor = AnchorStyles.None;
             panel1.Controls.Add(txtLogin);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(textHaslo);
+            panel1.Controls.Add(txtHaslo);
             panel1.Controls.Add(btnZaloguj);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(0, 0);
@@ -116,7 +117,7 @@
         #endregion
 
         private TextBox txtLogin;
-        private TextBox textHaslo;
+        private TextBox txtHaslo;
         private Button btnZaloguj;
         private Label label1;
         private Panel panel1;
