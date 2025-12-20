@@ -37,8 +37,9 @@ namespace ModelSzpitala
 
         // prywatny konstruktor - nikt poza klasą Szpital nie może wywołać new Szpital()
         private Szpital()
-        {
-
+        {       //administrator startowy
+                Administrator administrator = new Administrator("admin", "admin", "00000000001", "admin", "admin");
+                _listaPracownikow.Add(administrator);
         }
 
         public void DodajPracownika(Pracownik pracownik)
