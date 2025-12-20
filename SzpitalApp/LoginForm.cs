@@ -6,5 +6,10 @@ namespace SzpitalApp
         {
             InitializeComponent();
         }
+
+        private void T³oSzpital_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

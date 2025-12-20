@@ -31,6 +31,9 @@
             txtLogin = new TextBox();
             textHaslo = new TextBox();
             btnZaloguj = new Button();
+            TłoSzpital = new PictureBox();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)TłoSzpital).BeginInit();
             SuspendLayout();
             // 
             // txtLogin
@@ -52,7 +55,8 @@
             // 
             // btnZaloguj
             // 
-            btnZaloguj.BackColor = SystemColors.GradientActiveCaption;
+            btnZaloguj.BackColor = SystemColors.InactiveCaption;
+            btnZaloguj.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
             btnZaloguj.Location = new Point(327, 282);
             btnZaloguj.Name = "btnZaloguj";
             btnZaloguj.Size = new Size(150, 46);
@@ -60,16 +64,41 @@
             btnZaloguj.Text = "Zaloguj";
             btnZaloguj.UseVisualStyleBackColor = false;
             // 
+            // TłoSzpital
+            // 
+            TłoSzpital.Dock = DockStyle.Fill;
+            TłoSzpital.Image = Properties.Resources.Warszawa_Centrum_Zdrowia_Dziecka;
+            TłoSzpital.Location = new Point(0, 0);
+            TłoSzpital.Name = "TłoSzpital";
+            TłoSzpital.Size = new Size(800, 450);
+            TłoSzpital.TabIndex = 3;
+            TłoSzpital.TabStop = false;
+            TłoSzpital.Click += TłoSzpital_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.ButtonHighlight;
+            label1.Font = new Font("Segoe UI", 7.875F, FontStyle.Italic, GraphicsUnit.Point, 238);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(320, 30);
+            label1.TabIndex = 4;
+            label1.Text = "SzpitalApp by Bartłomiej Kłodnicki";
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(btnZaloguj);
             Controls.Add(textHaslo);
             Controls.Add(txtLogin);
+            Controls.Add(TłoSzpital);
             Name = "LoginForm";
             Text = "Logowanie";
+            ((System.ComponentModel.ISupportInitialize)TłoSzpital).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -79,5 +108,7 @@
         private TextBox txtLogin;
         private TextBox textHaslo;
         private Button btnZaloguj;
+        private PictureBox TłoSzpital;
+        private Label label1;
     }
 }
