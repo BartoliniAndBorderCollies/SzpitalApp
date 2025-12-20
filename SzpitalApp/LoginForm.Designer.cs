@@ -31,14 +31,16 @@
             txtLogin = new TextBox();
             textHaslo = new TextBox();
             btnZaloguj = new Button();
-            TłoSzpital = new PictureBox();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)TłoSzpital).BeginInit();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtLogin
             // 
-            txtLogin.Location = new Point(265, 111);
+            txtLogin.Location = new Point(335, 167);
             txtLogin.Name = "txtLogin";
             txtLogin.PlaceholderText = "Login";
             txtLogin.Size = new Size(311, 39);
@@ -46,7 +48,7 @@
             // 
             // textHaslo
             // 
-            textHaslo.Location = new Point(265, 203);
+            textHaslo.Location = new Point(335, 239);
             textHaslo.Name = "textHaslo";
             textHaslo.PlaceholderText = "Hasło";
             textHaslo.Size = new Size(311, 39);
@@ -57,50 +59,58 @@
             // 
             btnZaloguj.BackColor = SystemColors.InactiveCaption;
             btnZaloguj.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            btnZaloguj.Location = new Point(327, 282);
+            btnZaloguj.Location = new Point(401, 325);
             btnZaloguj.Name = "btnZaloguj";
             btnZaloguj.Size = new Size(150, 46);
             btnZaloguj.TabIndex = 2;
             btnZaloguj.Text = "Zaloguj";
             btnZaloguj.UseVisualStyleBackColor = false;
             // 
-            // TłoSzpital
-            // 
-            TłoSzpital.Dock = DockStyle.Fill;
-            TłoSzpital.Image = Properties.Resources.Warszawa_Centrum_Zdrowia_Dziecka;
-            TłoSzpital.Location = new Point(0, 0);
-            TłoSzpital.Name = "TłoSzpital";
-            TłoSzpital.Size = new Size(800, 450);
-            TłoSzpital.TabIndex = 3;
-            TłoSzpital.TabStop = false;
-            TłoSzpital.Click += TłoSzpital_Click;
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ButtonHighlight;
             label1.Font = new Font("Segoe UI", 7.875F, FontStyle.Italic, GraphicsUnit.Point, 238);
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(16, 12);
             label1.Name = "label1";
             label1.Size = new Size(320, 30);
             label1.TabIndex = 4;
             label1.Text = "SzpitalApp by Bartłomiej Kłodnicki";
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.None;
+            panel1.Controls.Add(txtLogin);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(textHaslo);
+            panel1.Controls.Add(btnZaloguj);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(981, 631);
+            panel1.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Warszawa_Centrum_Zdrowia_Dziecka;
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(975, 625);
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Controls.Add(btnZaloguj);
-            Controls.Add(textHaslo);
-            Controls.Add(txtLogin);
-            Controls.Add(TłoSzpital);
+            ClientSize = new Size(974, 629);
+            Controls.Add(panel1);
             Name = "LoginForm";
             Text = "Logowanie";
-            ((System.ComponentModel.ISupportInitialize)TłoSzpital).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -108,7 +118,8 @@
         private TextBox txtLogin;
         private TextBox textHaslo;
         private Button btnZaloguj;
-        private PictureBox TłoSzpital;
         private Label label1;
+        private Panel panel1;
+        private PictureBox pictureBox1;
     }
 }
