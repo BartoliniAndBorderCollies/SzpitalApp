@@ -79,6 +79,7 @@
             btnDodajPracownika.TabIndex = 1;
             btnDodajPracownika.Text = "Dodaj pracownika";
             btnDodajPracownika.UseVisualStyleBackColor = true;
+            btnDodajPracownika.Click += btnDodajPracownika_Click;
             // 
             // btnListaPracownikow
             // 
