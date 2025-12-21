@@ -162,7 +162,6 @@
             Controls.Add(cmbRodzajPracownika);
             Name = "AddEmployeeForm";
             Text = "AddEmployeeForm";
-            Load += AddEmployeeForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

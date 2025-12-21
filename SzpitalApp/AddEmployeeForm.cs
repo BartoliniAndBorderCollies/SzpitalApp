@@ -22,6 +22,7 @@ namespace SzpitalApp
 
             cmbSpecjalnosc.DataSource = Enum.GetValues(typeof(Specjalnosc));
             cmbSpecjalnosc.Hide();
+            txtPWZ.Hide();
         }
 
         private void cmbRodzajPracownika_SelectedIndexChanged(object sender, EventArgs e)
@@ -31,10 +32,12 @@ namespace SzpitalApp
             if (wybranyRodzaj == "Lekarz")
             {
                 cmbSpecjalnosc.Show();
+                txtPWZ.Show();
             }
             else
             {
                 cmbSpecjalnosc.Hide();
+                txtPWZ.Hide();
             }
         }
 
@@ -51,11 +54,25 @@ namespace SzpitalApp
             string pesel = txtPesel.Text;
             string login = txtLogin.Text;
             string haslo = txtHaslo.Text;
-            Specjalnosc specjalnosc = (Specjalnosc)cmbSpecjalnosc.SelectedItem;
 
-            if (CzyPodanoWszystkieDane(rodzajPracownika, imie, nazwisko, pesel, login, haslo))
+            Specjalnosc specjalnosc = default;
+
+            if (rodzajPracownika == "Lekarz")
             {
-                DodajPracownika(rodzajPracownika, imie, nazwisko, pesel, login, haslo, specjalnosc);
+                specjalnosc = (Specjalnosc)cmbSpecjalnosc.SelectedItem!;
+
+            }
+
+            int PWZ = 0;
+            if (!int.TryParse(txtPWZ.Text, out PWZ) && rodzajPracownika == "Lekarz")
+            {
+                MessageBox.Show("PWZ musi być liczbą!");
+                return;
+            }
+
+            if (CzyPodanoWszystkieDane(rodzajPracownika, imie, nazwisko, pesel, login, haslo, specjalnosc, PWZ))
+            {
+                DodajPracownika(rodzajPracownika, imie, nazwisko, pesel, login, haslo, specjalnosc, PWZ);
 
             }
             else
@@ -65,11 +82,11 @@ namespace SzpitalApp
             this.Close();
         }
 
-        private void DodajPracownika(string rodzajPracownika, string imie, string nazwisko, string pesel, string login, string haslo, Specjalnosc specjalnosc)
+        private void DodajPracownika(string rodzajPracownika, string imie, string nazwisko, string pesel, string login, string haslo, Specjalnosc specjalnosc, int PWZ)
         {
             if (rodzajPracownika == "Lekarz")
             {
-                Lekarz lekarz = new Lekarz(imie, nazwisko, pesel, login, haslo, specjalnosc, 0, new List<Dyzur>());
+                Lekarz lekarz = new Lekarz(imie, nazwisko, pesel, login, haslo, specjalnosc, PWZ, new List<Dyzur>());
                 ModelSzpitala.Szpital.SzpitalInstance.DodajPracownika(lekarz);
                 MessageBox.Show("Utworzono pracownika: lekarz");
             }
@@ -83,7 +100,7 @@ namespace SzpitalApp
 
         }
 
-        private bool CzyPodanoWszystkieDane(string rodzajPracownika, string imie, string nazwisko, string pesel, string login, string haslo)
+        private bool CzyPodanoWszystkieDane(string rodzajPracownika, string imie, string nazwisko, string pesel, string login, string haslo, Specjalnosc specjalnosc, int PWZ)
         {
             if (string.IsNullOrWhiteSpace(rodzajPracownika) ||
                 string.IsNullOrWhiteSpace(imie) ||
@@ -102,13 +119,15 @@ namespace SzpitalApp
                 return false;
             }
 
+            if (rodzajPracownika == "Lekarz" && PWZ == 0)
+            {
+                MessageBox.Show("Wpisz PWZ lekarza!");
+                return false;
+            }
+
             return true;
 
         }
 
-        private void AddEmployeeForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
