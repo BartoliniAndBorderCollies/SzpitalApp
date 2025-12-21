@@ -33,6 +33,7 @@
             lstPracownicy = new ListBox();
             btnDodajPracownika = new Button();
             btnListaPracownikow = new Button();
+            btnUsunPracownika = new Button();
             panelAdmina.SuspendLayout();
             panelContent.SuspendLayout();
             SuspendLayout();
@@ -50,12 +51,13 @@
             // panelContent
             // 
             panelContent.Anchor = AnchorStyles.None;
+            panelContent.Controls.Add(btnUsunPracownika);
             panelContent.Controls.Add(lstPracownicy);
             panelContent.Controls.Add(btnDodajPracownika);
             panelContent.Controls.Add(btnListaPracownikow);
             panelContent.Location = new Point(74, 31);
             panelContent.Name = "panelContent";
-            panelContent.Size = new Size(646, 378);
+            panelContent.Size = new Size(646, 383);
             panelContent.TabIndex = 0;
             panelContent.Paint += panelContent_Paint;
             // 
@@ -64,7 +66,7 @@
             lstPracownicy.Anchor = AnchorStyles.None;
             lstPracownicy.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
             lstPracownicy.FormattingEnabled = true;
-            lstPracownicy.Location = new Point(270, 72);
+            lstPracownicy.Location = new Point(270, 74);
             lstPracownicy.Name = "lstPracownicy";
             lstPracownicy.Size = new Size(363, 124);
             lstPracownicy.TabIndex = 2;
@@ -73,7 +75,7 @@
             // 
             btnDodajPracownika.Anchor = AnchorStyles.None;
             btnDodajPracownika.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            btnDodajPracownika.Location = new Point(59, 196);
+            btnDodajPracownika.Location = new Point(59, 198);
             btnDodajPracownika.Name = "btnDodajPracownika";
             btnDodajPracownika.Size = new Size(164, 75);
             btnDodajPracownika.TabIndex = 1;
@@ -85,13 +87,23 @@
             // 
             btnListaPracownikow.Anchor = AnchorStyles.None;
             btnListaPracownikow.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            btnListaPracownikow.Location = new Point(59, 72);
+            btnListaPracownikow.Location = new Point(59, 74);
             btnListaPracownikow.Name = "btnListaPracownikow";
             btnListaPracownikow.Size = new Size(164, 80);
             btnListaPracownikow.TabIndex = 0;
             btnListaPracownikow.Text = "Lista pracowników";
             btnListaPracownikow.UseVisualStyleBackColor = true;
             btnListaPracownikow.Click += btnListaPracownikow_Click;
+            // 
+            // btnUsunPracownika
+            // 
+            btnUsunPracownika.Location = new Point(59, 296);
+            btnUsunPracownika.Name = "btnUsunPracownika";
+            btnUsunPracownika.Size = new Size(164, 73);
+            btnUsunPracownika.TabIndex = 3;
+            btnUsunPracownika.Text = "Usuń pracownika";
+            btnUsunPracownika.UseVisualStyleBackColor = true;
+            btnUsunPracownika.Click += btnUsunPracownika_Click;
             // 
             // AdminPanel
             // 
@@ -113,5 +125,6 @@
         private Button btnListaPracownikow;
         private Button btnDodajPracownika;
         private ListBox lstPracownicy;
+        private Button btnUsunPracownika;
     }
 }

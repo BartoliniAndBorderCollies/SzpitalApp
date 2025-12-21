@@ -41,5 +41,11 @@ namespace SzpitalApp
             addEmployeeForm.ShowDialog();
 
         }
+
+        private void btnUsunPracownika_Click(object sender, EventArgs e)
+        {
+            RemoveEmployeeForm removeEmployeeForm = new RemoveEmployeeForm();
+            removeEmployeeForm.ShowDialog();
+        }
     }
 }

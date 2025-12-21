@@ -26,7 +26,7 @@ namespace ModelSzpitala
             }
         }
 
-        public IReadOnlyList<Pracownik> DostepDoListyPracownikow
+        public List<Pracownik> DostepDoListyPracownikow
         {
             get
             {
@@ -58,7 +58,6 @@ namespace ModelSzpitala
             }
             else
             {
-                Console.WriteLine("Nie mozna usunac nieistniejacego pracownika");
                 return;
 
             }
