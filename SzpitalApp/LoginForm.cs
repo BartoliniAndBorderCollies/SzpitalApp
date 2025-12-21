@@ -7,6 +7,17 @@ namespace SzpitalApp
         public LoginForm()
         {
             InitializeComponent();
+            UstaMaxRozmiar();
+        }
+
+        private void UstaMaxRozmiar()
+        {
+            var ekran = Screen.PrimaryScreen.WorkingArea;
+
+            this.MaximumSize = new Size(
+                (int)(ekran.Width * 0.6),
+                (int)(ekran.Height * 0.6)
+            );
         }
 
         private void T³oSzpital_Click(object sender, EventArgs e)
