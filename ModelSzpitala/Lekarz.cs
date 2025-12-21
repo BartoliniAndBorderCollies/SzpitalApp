@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModelSzpitala
 {
-    internal class Lekarz : Pracownik
+    public class Lekarz : Pracownik
     {
         private Specjalnosc _specjalnosc;
         private int _numerPWZ;
