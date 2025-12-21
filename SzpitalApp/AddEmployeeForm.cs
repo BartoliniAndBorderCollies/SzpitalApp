@@ -106,5 +106,9 @@ namespace SzpitalApp
 
         }
 
+        private void AddEmployeeForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

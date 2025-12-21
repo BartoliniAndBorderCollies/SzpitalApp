@@ -38,6 +38,7 @@
             btnAnuluj = new Button();
             label1 = new Label();
             cmbSpecjalnosc = new ComboBox();
+            txtPWZ = new TextBox();
             SuspendLayout();
             // 
             // cmbRodzajPracownika
@@ -134,11 +135,21 @@
             cmbSpecjalnosc.Text = "Specjalność";
             cmbSpecjalnosc.Visible = false;
             // 
+            // txtPWZ
+            // 
+            txtPWZ.Location = new Point(513, 259);
+            txtPWZ.Name = "txtPWZ";
+            txtPWZ.PlaceholderText = "PWZ";
+            txtPWZ.Size = new Size(200, 39);
+            txtPWZ.TabIndex = 10;
+            txtPWZ.Visible = false;
+            // 
             // AddEmployeeForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtPWZ);
             Controls.Add(cmbSpecjalnosc);
             Controls.Add(label1);
             Controls.Add(btnAnuluj);
@@ -151,6 +162,7 @@
             Controls.Add(cmbRodzajPracownika);
             Name = "AddEmployeeForm";
             Text = "AddEmployeeForm";
+            Load += AddEmployeeForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -170,8 +182,9 @@
 
         private void txtHaslo_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
+        private TextBox txtPWZ;
     }
 
 
