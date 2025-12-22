@@ -32,7 +32,9 @@
             btnUsunPracownika = new Button();
             btnDodajPracownika = new Button();
             btnListaPracownikow = new Button();
+            panelBackground = new Panel();
             panelContent.SuspendLayout();
+            panelBackground.SuspendLayout();
             SuspendLayout();
             // 
             // panelContent
@@ -40,6 +42,7 @@
             panelContent.Anchor = AnchorStyles.None;
             panelContent.AutoSize = true;
             panelContent.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelContent.BackColor = Color.Transparent;
             panelContent.BackgroundImageLayout = ImageLayout.None;
             panelContent.Controls.Add(btnUsunPracownika);
             panelContent.Controls.Add(btnDodajPracownika);
@@ -83,18 +86,29 @@
             btnListaPracownikow.UseVisualStyleBackColor = true;
             btnListaPracownikow.Click += btnListaPracownikow_Click;
             // 
+            // panelBackground
+            // 
+            panelBackground.BackgroundImage = Properties.Resources.Da_Vinci_Vitruve_Luc_Viatour;
+            panelBackground.Controls.Add(panelContent);
+            panelBackground.Dock = DockStyle.Fill;
+            panelBackground.Location = new Point(0, 0);
+            panelBackground.Name = "panelBackground";
+            panelBackground.Size = new Size(2278, 1148);
+            panelBackground.TabIndex = 1;
+            // 
             // MainPanelForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2278, 1148);
-            Controls.Add(panelContent);
+            Controls.Add(panelBackground);
             MaximumSize = new Size(2304, 1219);
             Name = "MainPanelForm";
             Text = "AdminPanel";
             panelContent.ResumeLayout(false);
+            panelBackground.ResumeLayout(false);
+            panelBackground.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -103,5 +117,6 @@
         private Button btnUsunPracownika;
         private Button btnDodajPracownika;
         private Button btnListaPracownikow;
+        private Panel panelBackground;
     }
 }
