@@ -34,28 +34,26 @@
             btnListaPracownikow = new Button();
             panelBackground = new Panel();
             panelContent.SuspendLayout();
-            panelBackground.SuspendLayout();
             SuspendLayout();
             // 
             // panelContent
             // 
-            panelContent.Anchor = AnchorStyles.None;
-            panelContent.AutoSize = true;
             panelContent.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelContent.BackColor = Color.Transparent;
+            panelContent.BackColor = Color.WhiteSmoke;
             panelContent.BackgroundImageLayout = ImageLayout.None;
             panelContent.Controls.Add(btnUsunPracownika);
             panelContent.Controls.Add(btnDodajPracownika);
             panelContent.Controls.Add(btnListaPracownikow);
-            panelContent.Location = new Point(98, 57);
+            panelContent.Dock = DockStyle.Left;
+            panelContent.Location = new Point(0, 0);
             panelContent.Name = "panelContent";
-            panelContent.Size = new Size(313, 751);
+            panelContent.Size = new Size(300, 1148);
             panelContent.TabIndex = 0;
             panelContent.Paint += panelContent_Paint;
             // 
             // btnUsunPracownika
             // 
-            btnUsunPracownika.Location = new Point(53, 344);
+            btnUsunPracownika.Location = new Point(22, 344);
             btnUsunPracownika.Name = "btnUsunPracownika";
             btnUsunPracownika.Size = new Size(257, 160);
             btnUsunPracownika.TabIndex = 3;
@@ -66,7 +64,7 @@
             // btnDodajPracownika
             // 
             btnDodajPracownika.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            btnDodajPracownika.Location = new Point(53, 100);
+            btnDodajPracownika.Location = new Point(22, 101);
             btnDodajPracownika.Name = "btnDodajPracownika";
             btnDodajPracownika.Size = new Size(257, 181);
             btnDodajPracownika.TabIndex = 1;
@@ -78,7 +76,7 @@
             // 
             btnListaPracownikow.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnListaPracownikow.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            btnListaPracownikow.Location = new Point(53, 578);
+            btnListaPracownikow.Location = new Point(22, 578);
             btnListaPracownikow.Name = "btnListaPracownikow";
             btnListaPracownikow.Size = new Size(257, 170);
             btnListaPracownikow.TabIndex = 0;
@@ -88,8 +86,7 @@
             // 
             // panelBackground
             // 
-            panelBackground.BackgroundImage = Properties.Resources.Da_Vinci_Vitruve_Luc_Viatour;
-            panelBackground.Controls.Add(panelContent);
+            panelBackground.BackgroundImage = Properties.Resources.to4;
             panelBackground.Dock = DockStyle.Fill;
             panelBackground.Location = new Point(0, 0);
             panelBackground.Name = "panelBackground";
@@ -101,13 +98,12 @@
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2278, 1148);
+            Controls.Add(panelContent);
             Controls.Add(panelBackground);
             MaximumSize = new Size(2304, 1219);
             Name = "MainPanelForm";
             Text = "AdminPanel";
             panelContent.ResumeLayout(false);
-            panelBackground.ResumeLayout(false);
-            panelBackground.PerformLayout();
             ResumeLayout(false);
         }
 
