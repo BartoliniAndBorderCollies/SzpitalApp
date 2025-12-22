@@ -27,7 +27,7 @@ namespace SzpitalApp
         {
             ListaPracownikowForm listaPracownikowForm = new ListaPracownikowForm();
             listaPracownikowForm.ShowDialog();
-            
+
 
         }
 
@@ -42,6 +42,23 @@ namespace SzpitalApp
         {
             RemoveEmployeeForm removeEmployeeForm = new RemoveEmployeeForm();
             removeEmployeeForm.ShowDialog();
+        }
+
+        private void btnExitProgram_Click(object sender, EventArgs e)
+        {
+
+            var wyjscie = MessageBox.Show(
+                "Czy na pewno chcesz zakończyć program?",
+                "Zamykanie aplikacji",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                );
+
+            if( wyjscie == DialogResult.Yes )
+            {
+                Application.Exit();
+            }
+
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panelContent = new Panel();
+            btnExitProgram = new Button();
             btnUsunPracownika = new Button();
             btnDodajPracownika = new Button();
             btnListaPracownikow = new Button();
@@ -41,6 +42,7 @@
             panelContent.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelContent.BackColor = Color.WhiteSmoke;
             panelContent.BackgroundImageLayout = ImageLayout.None;
+            panelContent.Controls.Add(btnExitProgram);
             panelContent.Controls.Add(btnUsunPracownika);
             panelContent.Controls.Add(btnDodajPracownika);
             panelContent.Controls.Add(btnListaPracownikow);
@@ -50,6 +52,20 @@
             panelContent.Size = new Size(300, 1148);
             panelContent.TabIndex = 0;
             panelContent.Paint += panelContent_Paint;
+            // 
+            // btnExitProgram
+            // 
+            btnExitProgram.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnExitProgram.BackColor = Color.SaddleBrown;
+            btnExitProgram.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnExitProgram.ForeColor = SystemColors.ButtonHighlight;
+            btnExitProgram.Location = new Point(22, 912);
+            btnExitProgram.Name = "btnExitProgram";
+            btnExitProgram.Size = new Size(257, 188);
+            btnExitProgram.TabIndex = 4;
+            btnExitProgram.Text = "Zapisz i wyjdź z programu";
+            btnExitProgram.UseVisualStyleBackColor = false;
+            btnExitProgram.Click += btnExitProgram_Click;
             // 
             // btnUsunPracownika
             // 
@@ -114,5 +130,6 @@
         private Button btnDodajPracownika;
         private Button btnListaPracownikow;
         private Panel panelBackground;
+        private Button btnExitProgram;
     }
 }
