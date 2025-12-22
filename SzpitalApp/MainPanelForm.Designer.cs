@@ -34,7 +34,9 @@
             btnDodajPracownika = new Button();
             btnListaPracownikow = new Button();
             panelBackground = new Panel();
+            blackPanel = new Panel();
             panelContent.SuspendLayout();
+            blackPanel.SuspendLayout();
             SuspendLayout();
             // 
             // panelContent
@@ -47,9 +49,9 @@
             panelContent.Controls.Add(btnDodajPracownika);
             panelContent.Controls.Add(btnListaPracownikow);
             panelContent.Dock = DockStyle.Left;
-            panelContent.Location = new Point(0, 0);
+            panelContent.Location = new Point(50, 50);
             panelContent.Name = "panelContent";
-            panelContent.Size = new Size(300, 1148);
+            panelContent.Size = new Size(300, 1048);
             panelContent.TabIndex = 0;
             panelContent.Paint += panelContent_Paint;
             // 
@@ -59,7 +61,7 @@
             btnExitProgram.BackColor = Color.SaddleBrown;
             btnExitProgram.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnExitProgram.ForeColor = SystemColors.ButtonHighlight;
-            btnExitProgram.Location = new Point(22, 912);
+            btnExitProgram.Location = new Point(22, 842);
             btnExitProgram.Name = "btnExitProgram";
             btnExitProgram.Size = new Size(257, 188);
             btnExitProgram.TabIndex = 4;
@@ -69,7 +71,7 @@
             // 
             // btnUsunPracownika
             // 
-            btnUsunPracownika.Location = new Point(22, 344);
+            btnUsunPracownika.Location = new Point(22, 312);
             btnUsunPracownika.Name = "btnUsunPracownika";
             btnUsunPracownika.Size = new Size(257, 160);
             btnUsunPracownika.TabIndex = 3;
@@ -80,7 +82,7 @@
             // btnDodajPracownika
             // 
             btnDodajPracownika.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            btnDodajPracownika.Location = new Point(22, 101);
+            btnDodajPracownika.Location = new Point(22, 75);
             btnDodajPracownika.Name = "btnDodajPracownika";
             btnDodajPracownika.Size = new Size(257, 181);
             btnDodajPracownika.TabIndex = 1;
@@ -92,7 +94,7 @@
             // 
             btnListaPracownikow.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnListaPracownikow.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            btnListaPracownikow.Location = new Point(22, 578);
+            btnListaPracownikow.Location = new Point(22, 538);
             btnListaPracownikow.Name = "btnListaPracownikow";
             btnListaPracownikow.Size = new Size(257, 170);
             btnListaPracownikow.TabIndex = 0;
@@ -102,25 +104,40 @@
             // 
             // panelBackground
             // 
+            panelBackground.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelBackground.BackgroundImage = Properties.Resources.to4;
             panelBackground.Dock = DockStyle.Fill;
-            panelBackground.Location = new Point(0, 0);
+            panelBackground.Location = new Point(350, 50);
             panelBackground.Name = "panelBackground";
-            panelBackground.Size = new Size(2278, 1148);
+            panelBackground.Size = new Size(1878, 1048);
             panelBackground.TabIndex = 1;
+            // 
+            // blackPanel
+            // 
+            blackPanel.AutoSize = true;
+            blackPanel.BackColor = SystemColors.ActiveCaptionText;
+            blackPanel.Controls.Add(panelBackground);
+            blackPanel.Controls.Add(panelContent);
+            blackPanel.Dock = DockStyle.Fill;
+            blackPanel.Location = new Point(0, 0);
+            blackPanel.Name = "blackPanel";
+            blackPanel.Padding = new Padding(50);
+            blackPanel.Size = new Size(2278, 1148);
+            blackPanel.TabIndex = 0;
             // 
             // MainPanelForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2278, 1148);
-            Controls.Add(panelContent);
-            Controls.Add(panelBackground);
+            Controls.Add(blackPanel);
             MaximumSize = new Size(2304, 1219);
             Name = "MainPanelForm";
             Text = "AdminPanel";
             panelContent.ResumeLayout(false);
+            blackPanel.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -131,5 +148,6 @@
         private Button btnListaPracownikow;
         private Panel panelBackground;
         private Button btnExitProgram;
+        private Panel blackPanel;
     }
 }
