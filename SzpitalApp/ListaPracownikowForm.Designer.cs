@@ -31,12 +31,12 @@
             dataGridViewPracownicy = new DataGridView();
             btnEdytuj = new Button();
             btnAnuluj = new Button();
-            panelContent = new Panel();
+            bottomPanel = new Panel();
             upperPanel = new Panel();
-            panel1 = new Panel();
+            mainGridPanel = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPracownicy).BeginInit();
-            panelContent.SuspendLayout();
-            panel1.SuspendLayout();
+            bottomPanel.SuspendLayout();
+            mainGridPanel.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridViewPracownicy
@@ -76,17 +76,17 @@
             btnAnuluj.UseVisualStyleBackColor = true;
             btnAnuluj.Click += btnAnuluj_Click;
             // 
-            // panelContent
+            // bottomPanel
             // 
-            panelContent.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelContent.BackgroundImage = Properties.Resources.bottom2;
-            panelContent.Controls.Add(btnEdytuj);
-            panelContent.Controls.Add(btnAnuluj);
-            panelContent.Dock = DockStyle.Bottom;
-            panelContent.Location = new Point(50, 904);
-            panelContent.Name = "panelContent";
-            panelContent.Size = new Size(2178, 194);
-            panelContent.TabIndex = 3;
+            bottomPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            bottomPanel.BackgroundImage = Properties.Resources.bottom2;
+            bottomPanel.Controls.Add(btnEdytuj);
+            bottomPanel.Controls.Add(btnAnuluj);
+            bottomPanel.Dock = DockStyle.Bottom;
+            bottomPanel.Location = new Point(50, 904);
+            bottomPanel.Name = "bottomPanel";
+            bottomPanel.Size = new Size(2178, 194);
+            bottomPanel.TabIndex = 3;
             // 
             // upperPanel
             // 
@@ -98,31 +98,31 @@
             upperPanel.Size = new Size(2178, 238);
             upperPanel.TabIndex = 4;
             // 
-            // panel1
+            // mainGridPanel
             // 
-            panel1.BackColor = SystemColors.ActiveCaptionText;
-            panel1.Controls.Add(dataGridViewPracownicy);
-            panel1.Controls.Add(panelContent);
-            panel1.Controls.Add(upperPanel);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Padding = new Padding(50);
-            panel1.Size = new Size(2278, 1148);
-            panel1.TabIndex = 5;
+            mainGridPanel.BackColor = SystemColors.ActiveCaptionText;
+            mainGridPanel.Controls.Add(dataGridViewPracownicy);
+            mainGridPanel.Controls.Add(bottomPanel);
+            mainGridPanel.Controls.Add(upperPanel);
+            mainGridPanel.Dock = DockStyle.Fill;
+            mainGridPanel.Location = new Point(0, 0);
+            mainGridPanel.Name = "mainGridPanel";
+            mainGridPanel.Padding = new Padding(50);
+            mainGridPanel.Size = new Size(2278, 1148);
+            mainGridPanel.TabIndex = 5;
             // 
             // ListaPracownikowForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2278, 1148);
-            Controls.Add(panel1);
+            Controls.Add(mainGridPanel);
             Name = "ListaPracownikowForm";
             Text = "ListaPracownikowForm";
             Load += ListaPracownikowForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewPracownicy).EndInit();
-            panelContent.ResumeLayout(false);
-            panel1.ResumeLayout(false);
+            bottomPanel.ResumeLayout(false);
+            mainGridPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -131,8 +131,8 @@
         private DataGridView dataGridViewPracownicy;
         private Button btnEdytuj;
         private Button btnAnuluj;
-        private Panel panelContent;
+        private Panel bottomPanel;
         private Panel upperPanel;
-        private Panel panel1;
+        private Panel mainGridPanel;
     }
 }
