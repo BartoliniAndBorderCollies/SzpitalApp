@@ -23,6 +23,14 @@ namespace ModelSzpitala
             }
         }
 
+        public int PokazPWZ
+        {
+            get
+            {
+                return _numerPWZ;
+            }
+        }
+
         public Specjalnosc PokazSpecjalnosc
         {
             get

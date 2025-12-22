@@ -25,14 +25,10 @@ namespace SzpitalApp
 
         private void btnListaPracownikow_Click(object sender, EventArgs e)
         {
-            lstPracownicy.Items.Clear();
-            var pracownicy = ModelSzpitala.Szpital.SzpitalInstance.DostepDoListyPracownikow;
+            ListaPracownikowForm listaPracownikowForm = new ListaPracownikowForm();
+            listaPracownikowForm.ShowDialog();
+            
 
-            foreach (Pracownik pracownik in pracownicy)
-            {
-                lstPracownicy.Items.Add(pracownik);
-
-            }
         }
 
         private void btnDodajPracownika_Click(object sender, EventArgs e)

@@ -54,6 +54,8 @@
             // btnUsun
             // 
             btnUsun.BackColor = Color.Firebrick;
+            btnUsun.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnUsun.ForeColor = SystemColors.ButtonHighlight;
             btnUsun.Location = new Point(170, 302);
             btnUsun.Name = "btnUsun";
             btnUsun.Size = new Size(150, 46);

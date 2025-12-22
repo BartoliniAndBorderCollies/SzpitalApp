@@ -96,7 +96,9 @@
             // 
             // btnZapisz
             // 
-            btnZapisz.BackColor = SystemColors.GradientActiveCaption;
+            btnZapisz.BackColor = SystemColors.HotTrack;
+            btnZapisz.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnZapisz.ForeColor = SystemColors.ButtonHighlight;
             btnZapisz.Location = new Point(103, 371);
             btnZapisz.Name = "btnZapisz";
             btnZapisz.Size = new Size(150, 46);
