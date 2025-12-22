@@ -121,20 +121,8 @@
   <data name="to3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\to3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="to2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\to2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Da_Vinci_Vitruve_Luc_Viatour1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Da_Vinci_Vitruve_Luc_Viatour1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Warszawa-Centrum_Zdrowia_Dziecka" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Warszawa-Centrum_Zdrowia_Dziecka.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Da_Vinci_Vitruve_Luc_Viatour" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Da_Vinci_Vitruve_Luc_Viatour.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="to" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\to.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="to4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\to4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
