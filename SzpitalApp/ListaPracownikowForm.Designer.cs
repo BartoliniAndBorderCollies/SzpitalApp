@@ -43,6 +43,7 @@
             // 
             dataGridViewPracownicy.AllowUserToAddRows = false;
             dataGridViewPracownicy.AllowUserToDeleteRows = false;
+            dataGridViewPracownicy.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewPracownicy.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridViewPracownicy.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewPracownicy.Dock = DockStyle.Fill;
