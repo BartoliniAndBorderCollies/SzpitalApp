@@ -12,6 +12,8 @@ namespace ModelSzpitala
         //SINGELTON
         private static Szpital? _szpital;
 
+        private int _ostatnieId = 1;
+
         private readonly List<Pracownik> _listaPracownikow = new List<Pracownik>();
 
         public static Szpital SzpitalInstance
@@ -34,16 +36,16 @@ namespace ModelSzpitala
             }
         }
 
-
         // prywatny konstruktor - nikt poza klasą Szpital nie może wywołać new Szpital()
         private Szpital()
         {       //administrator startowy
-                Administrator administrator = new Administrator("admin", "admin", "00000000001", "admin", "admin");
-                _listaPracownikow.Add(administrator);
+            Administrator administrator = new Administrator(1, "admin", "admin", "00000000001", "admin", "admin");
+            _listaPracownikow.Add(administrator);
         }
 
         public void DodajPracownika(Pracownik pracownik)
         {
+            pracownik.Id = _ostatnieId++;
             _listaPracownikow.Add(pracownik);
         }
 
@@ -55,11 +57,6 @@ namespace ModelSzpitala
             if (pracownikDoUsuniecia != null)
             {
                 _listaPracownikow.Remove(pracownikDoUsuniecia);
-            }
-            else
-            {
-                return;
-
             }
         }
 
@@ -96,8 +93,8 @@ namespace ModelSzpitala
 
             foreach (Pracownik pracownik in _listaPracownikow)
             {
-                
-                if(pracownik is Lekarz || pracownik is Pielegniarka)
+
+                if (pracownik is Lekarz || pracownik is Pielegniarka)
                 {
                     listaLekarzyPielegniarek.Add(pracownik);
                 }
@@ -114,9 +111,9 @@ namespace ModelSzpitala
 
             foreach (Pracownik pracownik in _listaPracownikow)
             {
-                if(pracownik.Imie == imie && pracownik.Nazwisko == nazwisko && pracownik is Lekarz lekarz)
+                if (pracownik.Imie == imie && pracownik.Nazwisko == nazwisko && pracownik is Lekarz lekarz)
                 {
-                    listaDyzurow = lekarz.PokazListeDyzurow; 
+                    listaDyzurow = lekarz.PokazListeDyzurow;
                 }
 
                 if (pracownik.Imie == imie && pracownik.Nazwisko == nazwisko && pracownik is Pielegniarka pielegniarka)
@@ -135,14 +132,14 @@ namespace ModelSzpitala
 
             foreach (Pracownik pracownik in _listaPracownikow)
             {
-               
-                if(pracownik is Lekarz lekarzZListyDyzurow && 
+
+                if (pracownik is Lekarz lekarzZListyDyzurow &&
                     lekarzZListyDyzurow.PokazSpecjalnosc == specjalnoscLekarza &&
                     lekarzZListyDyzurow != lekarz)
                 {
-                    foreach(Dyzur dyzuryLekarzaZListy in lekarzZListyDyzurow.PokazListeDyzurow)
+                    foreach (Dyzur dyzuryLekarzaZListy in lekarzZListyDyzurow.PokazListeDyzurow)
                     {
-                        if(dyzuryLekarzaZListy.DataRozpoczecia.Date == dataDyzuru)
+                        if (dyzuryLekarzaZListy.DataRozpoczecia.Date == dataDyzuru)
                         {
                             return true;
                         }
@@ -156,15 +153,15 @@ namespace ModelSzpitala
 
         public Pracownik? Zaloguj(string user, string haslo)
         {
-            foreach(Pracownik pracownik in _listaPracownikow)
+            foreach (Pracownik pracownik in _listaPracownikow)
             {
-                if(pracownik.NazwaUzytkownika == user && pracownik.Haslo == haslo)
+                if (pracownik.NazwaUzytkownika == user && pracownik.Haslo == haslo)
                 {
                     return pracownik;
                 }
 
             }
-                return null;
+            return null;
         }
     }
 }

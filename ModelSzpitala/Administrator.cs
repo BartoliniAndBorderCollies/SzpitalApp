@@ -9,7 +9,7 @@ namespace ModelSzpitala
     public class Administrator : Pracownik
     {
 
-        public Administrator(int id, string imie, string nazwisko, string pesel, string nazwaUzytkownika, string haslo) : base(id, imie, nazwisko, pesel,nazwaUzytkownika, haslo)
+        public Administrator(string imie, string nazwisko, string pesel, string nazwaUzytkownika, string haslo) : base(imie, nazwisko, pesel,nazwaUzytkownika, haslo)
         {
         
         }

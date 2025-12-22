@@ -12,7 +12,7 @@ namespace ModelSzpitala
         private int _numerPWZ;
         private readonly List<Dyzur> _listaDyzurow = new List<Dyzur>(); //tworze liste raz, a potem mogę ją modyfikować, ale nie nadpisywac
 
-        public Lekarz(int id, string imie, string nazwisko, string pesel, string nazwaUzytkownika, string haslo, Specjalnosc specjalnosc, int numerPWZ, List<Dyzur> listaDyzurow) : base(id, imie, nazwisko, pesel, nazwaUzytkownika, haslo)
+        public Lekarz(string imie, string nazwisko, string pesel, string nazwaUzytkownika, string haslo, Specjalnosc specjalnosc, int numerPWZ, List<Dyzur> listaDyzurow) : base(imie, nazwisko, pesel, nazwaUzytkownika, haslo)
         {
             this._specjalnosc = specjalnosc;
             this._numerPWZ = numerPWZ;

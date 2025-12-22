@@ -24,6 +24,7 @@ namespace SzpitalApp
 
             dataGridViewPracownicy.DataSource = pracownicy.Select(p => new
             {
+                id = p.Id,
                 Imie = p.Imie,
                 Nazwisko = p.Nazwisko,
                 Rola = p.GetType().Name,

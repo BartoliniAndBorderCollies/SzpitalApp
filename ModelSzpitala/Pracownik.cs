@@ -9,9 +9,8 @@
         public string NazwaUzytkownika { get; set; }
         public string Haslo { get; set; }
 
-        public Pracownik(int id, string imie, string nazwisko, string pesel, string nazwaUzytkownika, string haslo)
+        public Pracownik(string imie, string nazwisko, string pesel, string nazwaUzytkownika, string haslo)
         {
-            Id = id;
             Imie = imie;
             Nazwisko = nazwisko;
             Pesel = pesel;
