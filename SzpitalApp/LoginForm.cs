@@ -42,7 +42,7 @@ namespace SzpitalApp
             }
             else
             {
-                MainPanel mainPanel = new MainPanel();
+                MainPanelForm mainPanel = new MainPanelForm();
                 mainPanel.Show();
 
                 this.Hide();

@@ -14,7 +14,9 @@ namespace SzpitalApp
     {
         public BaseForm()
         {
-            this.StartPosition = FormStartPosition.CenterScreen;
+            InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
+            MinimumSize = new Size(800, 600);
         }
 
         protected override void OnShown(EventArgs e)
@@ -23,22 +25,11 @@ namespace SzpitalApp
 
             var ekran = Screen.PrimaryScreen.WorkingArea;
 
-            this.Size = new Size(
+            Size = new Size(
                 (int)(ekran.Width * 0.8),
                 (int)(ekran.Height * 0.8)
             );
-
-            this.MinimumSize = new Size(800, 600);
-            this.MaximumSize = new Size(
-                (int)(ekran.Width * 0.8),
-                (int)(ekran.Height * 0.8)
-            );
-
-            this.Location = new Point(
-            (ekran.Width - this.Width) / 2,
-            (ekran.Height - this.Height) / 2
-);
         }
-
     }
+
 }

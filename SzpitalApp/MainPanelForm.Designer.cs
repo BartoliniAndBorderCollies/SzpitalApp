@@ -1,6 +1,6 @@
 ﻿namespace SzpitalApp
 {
-    partial class MainPanel
+    partial class MainPanelForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,42 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panelAdmina = new Panel();
             panelContent = new Panel();
             btnUsunPracownika = new Button();
             btnDodajPracownika = new Button();
             btnListaPracownikow = new Button();
-            panelAdmina.SuspendLayout();
             panelContent.SuspendLayout();
             SuspendLayout();
-            // 
-            // panelAdmina
-            // 
-            panelAdmina.BackgroundImage = Properties.Resources.Da_Vinci_Vitruve_Luc_Viatour1;
-            panelAdmina.Controls.Add(panelContent);
-            panelAdmina.Dock = DockStyle.Fill;
-            panelAdmina.Location = new Point(0, 0);
-            panelAdmina.Name = "panelAdmina";
-            panelAdmina.Size = new Size(800, 450);
-            panelAdmina.TabIndex = 0;
             // 
             // panelContent
             // 
             panelContent.Anchor = AnchorStyles.None;
+            panelContent.AutoSize = true;
+            panelContent.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelContent.BackgroundImageLayout = ImageLayout.None;
             panelContent.Controls.Add(btnUsunPracownika);
             panelContent.Controls.Add(btnDodajPracownika);
             panelContent.Controls.Add(btnListaPracownikow);
-            panelContent.Location = new Point(74, 31);
+            panelContent.Location = new Point(98, 57);
             panelContent.Name = "panelContent";
-            panelContent.Size = new Size(646, 383);
+            panelContent.Size = new Size(313, 751);
             panelContent.TabIndex = 0;
             panelContent.Paint += panelContent_Paint;
             // 
             // btnUsunPracownika
             // 
-            btnUsunPracownika.Location = new Point(59, 296);
+            btnUsunPracownika.Location = new Point(53, 344);
             btnUsunPracownika.Name = "btnUsunPracownika";
-            btnUsunPracownika.Size = new Size(164, 73);
+            btnUsunPracownika.Size = new Size(257, 160);
             btnUsunPracownika.TabIndex = 3;
             btnUsunPracownika.Text = "Usuń pracownika";
             btnUsunPracownika.UseVisualStyleBackColor = true;
@@ -71,11 +62,10 @@
             // 
             // btnDodajPracownika
             // 
-            btnDodajPracownika.Anchor = AnchorStyles.None;
             btnDodajPracownika.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            btnDodajPracownika.Location = new Point(59, 198);
+            btnDodajPracownika.Location = new Point(53, 100);
             btnDodajPracownika.Name = "btnDodajPracownika";
-            btnDodajPracownika.Size = new Size(164, 75);
+            btnDodajPracownika.Size = new Size(257, 181);
             btnDodajPracownika.TabIndex = 1;
             btnDodajPracownika.Text = "Dodaj pracownika";
             btnDodajPracownika.UseVisualStyleBackColor = true;
@@ -83,35 +73,35 @@
             // 
             // btnListaPracownikow
             // 
-            btnListaPracownikow.Anchor = AnchorStyles.None;
+            btnListaPracownikow.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnListaPracownikow.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            btnListaPracownikow.Location = new Point(59, 74);
+            btnListaPracownikow.Location = new Point(53, 578);
             btnListaPracownikow.Name = "btnListaPracownikow";
-            btnListaPracownikow.Size = new Size(164, 80);
+            btnListaPracownikow.Size = new Size(257, 170);
             btnListaPracownikow.TabIndex = 0;
-            btnListaPracownikow.Text = "Lista pracowników";
+            btnListaPracownikow.Text = "Lista pracowników i ich edycja";
             btnListaPracownikow.UseVisualStyleBackColor = true;
             btnListaPracownikow.Click += btnListaPracownikow_Click;
             // 
-            // AdminPanel
+            // MainPanelForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(panelAdmina);
-            Name = "AdminPanel";
+            ClientSize = new Size(2278, 1148);
+            Controls.Add(panelContent);
+            MaximumSize = new Size(2304, 1219);
+            Name = "MainPanelForm";
             Text = "AdminPanel";
-            panelAdmina.ResumeLayout(false);
             panelContent.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Panel panelAdmina;
         private Panel panelContent;
-        private Button btnListaPracownikow;
-        private Button btnDodajPracownika;
         private Button btnUsunPracownika;
+        private Button btnDodajPracownika;
+        private Button btnListaPracownikow;
     }
 }
