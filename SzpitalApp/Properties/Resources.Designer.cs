@@ -63,16 +63,6 @@ namespace SzpitalApp.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bottom {
-            get {
-                object obj = ResourceManager.GetObject("bottom", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bottom2 {
             get {
                 object obj = ResourceManager.GetObject("bottom2", resourceCulture);
