@@ -105,7 +105,7 @@
             // panelBackground
             // 
             panelBackground.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelBackground.BackgroundImage = Properties.Resources.to4;
+            panelBackground.BackgroundImage = Properties.Resources.Da_Vinci_Vitruve_Luc_Viatour1;
             panelBackground.Dock = DockStyle.Fill;
             panelBackground.Location = new Point(350, 50);
             panelBackground.Name = "panelBackground";
@@ -116,6 +116,7 @@
             // 
             blackPanel.AutoSize = true;
             blackPanel.BackColor = SystemColors.ActiveCaptionText;
+            blackPanel.BackgroundImageLayout = ImageLayout.None;
             blackPanel.Controls.Add(panelBackground);
             blackPanel.Controls.Add(panelContent);
             blackPanel.Dock = DockStyle.Fill;
