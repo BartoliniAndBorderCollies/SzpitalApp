@@ -33,21 +33,25 @@
             btnAnuluj = new Button();
             panelContent = new Panel();
             upperPanel = new Panel();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPracownicy).BeginInit();
             panelContent.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridViewPracownicy
             // 
             dataGridViewPracownicy.AllowUserToAddRows = false;
             dataGridViewPracownicy.AllowUserToDeleteRows = false;
+            dataGridViewPracownicy.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridViewPracownicy.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewPracownicy.Dock = DockStyle.Fill;
-            dataGridViewPracownicy.Location = new Point(0, 0);
+            dataGridViewPracownicy.Location = new Point(50, 288);
+            dataGridViewPracownicy.Margin = new Padding(30, 3, 3, 3);
             dataGridViewPracownicy.Name = "dataGridViewPracownicy";
             dataGridViewPracownicy.ReadOnly = true;
             dataGridViewPracownicy.RowHeadersWidth = 82;
-            dataGridViewPracownicy.Size = new Size(2278, 1148);
+            dataGridViewPracownicy.Size = new Size(2178, 616);
             dataGridViewPracownicy.TabIndex = 0;
             // 
             // btnEdytuj
@@ -75,38 +79,50 @@
             // panelContent
             // 
             panelContent.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelContent.BackgroundImage = Properties.Resources.bottom;
+            panelContent.BackgroundImage = Properties.Resources.bottom2;
             panelContent.Controls.Add(btnEdytuj);
             panelContent.Controls.Add(btnAnuluj);
             panelContent.Dock = DockStyle.Bottom;
-            panelContent.Location = new Point(0, 954);
+            panelContent.Location = new Point(50, 904);
             panelContent.Name = "panelContent";
-            panelContent.Size = new Size(2278, 194);
+            panelContent.Size = new Size(2178, 194);
             panelContent.TabIndex = 3;
             // 
             // upperPanel
             // 
             upperPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            upperPanel.BackgroundImage = Properties.Resources.Da_Vinci_Vitruve_Luc_Viatour;
+            upperPanel.BackgroundImage = Properties.Resources.upper;
             upperPanel.Dock = DockStyle.Top;
-            upperPanel.Location = new Point(0, 0);
+            upperPanel.Location = new Point(50, 50);
             upperPanel.Name = "upperPanel";
-            upperPanel.Size = new Size(2278, 238);
+            upperPanel.Size = new Size(2178, 238);
             upperPanel.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ActiveCaptionText;
+            panel1.Controls.Add(dataGridViewPracownicy);
+            panel1.Controls.Add(panelContent);
+            panel1.Controls.Add(upperPanel);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Padding = new Padding(50);
+            panel1.Size = new Size(2278, 1148);
+            panel1.TabIndex = 5;
             // 
             // ListaPracownikowForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2278, 1148);
-            Controls.Add(upperPanel);
-            Controls.Add(panelContent);
-            Controls.Add(dataGridViewPracownicy);
+            Controls.Add(panel1);
             Name = "ListaPracownikowForm";
             Text = "ListaPracownikowForm";
             Load += ListaPracownikowForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewPracownicy).EndInit();
             panelContent.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -117,5 +133,6 @@
         private Button btnAnuluj;
         private Panel panelContent;
         private Panel upperPanel;
+        private Panel panel1;
     }
 }

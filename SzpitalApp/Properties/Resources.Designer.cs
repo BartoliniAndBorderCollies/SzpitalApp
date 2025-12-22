@@ -73,6 +73,16 @@ namespace SzpitalApp.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bottom2 {
+            get {
+                object obj = ResourceManager.GetObject("bottom2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Da_Vinci_Vitruve_Luc_Viatour {
             get {
                 object obj = ResourceManager.GetObject("Da_Vinci_Vitruve_Luc_Viatour", resourceCulture);
@@ -96,6 +106,16 @@ namespace SzpitalApp.Properties {
         internal static System.Drawing.Bitmap to4 {
             get {
                 object obj = ResourceManager.GetObject("to4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap upper {
+            get {
+                object obj = ResourceManager.GetObject("upper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
