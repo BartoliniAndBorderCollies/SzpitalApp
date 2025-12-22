@@ -12,7 +12,7 @@ namespace ModelSzpitala
         private readonly List<Dyzur> _listaDyzurow = new List<Dyzur>(); //tworze listę raz, a potem moge ją modyfikować, ale nie nadpisywać
 
 
-        public Pielegniarka(string imie, string nazwisko, string pesel, string nazwaUzytkownika, string haslo, List<Dyzur> listaDyzurow) : base(imie, nazwisko, pesel, nazwaUzytkownika, haslo)
+        public Pielegniarka(int id, string imie, string nazwisko, string pesel, string nazwaUzytkownika, string haslo, List<Dyzur> listaDyzurow) : base(id, imie, nazwisko, pesel, nazwaUzytkownika, haslo)
         {
             if (listaDyzurow != null)
             {
