@@ -32,7 +32,7 @@ namespace SzpitalApp
                 NumerPWZ = (p is Lekarz lekarz2) ? lekarz2.PokazPWZ.ToString() : "",
                 PESEL = p.Pesel,
                 Login = p.NazwaUzytkownika,
-                Haslo = p.Haslo,
+                Haslo = p.HashHasla
 
             }).ToList();
         }
