@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SzpitalApp
 {
-    public partial class ListaPracownikowForm : Form
+    public partial class ListaPracownikowForm : BaseForm
     {
         public ListaPracownikowForm()
         {

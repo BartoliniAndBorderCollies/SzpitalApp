@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SzpitalApp
 {
-    public partial class RemoveEmployeeForm : Form
+    public partial class RemoveEmployeeForm : BaseForm
     {
         public RemoveEmployeeForm()
         {
