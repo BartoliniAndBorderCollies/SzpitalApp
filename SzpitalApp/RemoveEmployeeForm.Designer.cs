@@ -32,12 +32,13 @@
             txtPodajPesel = new TextBox();
             btnUsun = new Button();
             btnAnuluj = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // lblUsuwaniePracownika
             // 
             lblUsuwaniePracownika.AutoSize = true;
-            lblUsuwaniePracownika.Location = new Point(251, 49);
+            lblUsuwaniePracownika.Location = new Point(248, 32);
             lblUsuwaniePracownika.Name = "lblUsuwaniePracownika";
             lblUsuwaniePracownika.Size = new Size(243, 32);
             lblUsuwaniePracownika.TabIndex = 0;
@@ -47,7 +48,7 @@
             // 
             txtPodajPesel.Location = new Point(161, 168);
             txtPodajPesel.Name = "txtPodajPesel";
-            txtPodajPesel.PlaceholderText = "Podaj PESEL pracownika do usunięcia";
+            txtPodajPesel.PlaceholderText = "PESEL";
             txtPodajPesel.Size = new Size(457, 39);
             txtPodajPesel.TabIndex = 1;
             // 
@@ -74,11 +75,21 @@
             btnAnuluj.UseVisualStyleBackColor = true;
             btnAnuluj.Click += btnAnuluj_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(189, 122);
+            label1.Name = "label1";
+            label1.Size = new Size(409, 32);
+            label1.TabIndex = 4;
+            label1.Text = "Podaj PESEL pracownika do usunięcia";
+            // 
             // RemoveEmployeeForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(btnAnuluj);
             Controls.Add(btnUsun);
             Controls.Add(txtPodajPesel);
@@ -95,5 +106,6 @@
         private TextBox txtPodajPesel;
         private Button btnUsun;
         private Button btnAnuluj;
+        private Label label1;
     }
 }

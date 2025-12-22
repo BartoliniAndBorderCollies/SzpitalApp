@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SzpitalApp
 {
-    public partial class AdminPanel : Form
+    public partial class MainPanel : Form
     {
-        public AdminPanel()
+        public MainPanel()
         {
             InitializeComponent();
         }

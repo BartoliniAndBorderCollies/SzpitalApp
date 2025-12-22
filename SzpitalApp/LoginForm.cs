@@ -7,10 +7,11 @@ namespace SzpitalApp
         public LoginForm()
         {
             InitializeComponent();
-            UstaMaxRozmiar();
+            UstawMaxRozmiar();
+            this.AcceptButton = btnZaloguj;
         }
 
-        private void UstaMaxRozmiar()
+        private void UstawMaxRozmiar()
         {
             var ekran = Screen.PrimaryScreen.WorkingArea;
 
@@ -37,22 +38,15 @@ namespace SzpitalApp
                 MessageBox.Show("Has³o lub login jest niepoprawne!");
                 txtLogin.Clear();
                 txtHaslo.Clear();
-                txtHaslo.Focus();
-            }
-            else if (pracownik is Administrator)
-            {
-                MessageBox.Show("Logowanie jako administrator");
-
-                AdminPanel adminPanel = new AdminPanel();
-                adminPanel.Show();
-
-                this.Hide();
+                txtLogin.Focus();
             }
             else
             {
-                MessageBox.Show("Zalogowano");
-            }
+                MainPanel mainPanel = new MainPanel();
+                mainPanel.Show();
 
+                this.Hide();
+            }
         }
     }
 }

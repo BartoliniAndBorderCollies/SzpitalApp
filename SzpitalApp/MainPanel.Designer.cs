@@ -1,6 +1,6 @@
 ﻿namespace SzpitalApp
 {
-    partial class AdminPanel
+    partial class MainPanel
     {
         /// <summary>
         /// Required designer variable.

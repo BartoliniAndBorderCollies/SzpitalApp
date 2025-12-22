@@ -88,14 +88,12 @@ namespace SzpitalApp
             {
                 Lekarz lekarz = new Lekarz(imie, nazwisko, pesel, login, haslo, specjalnosc, PWZ, new List<Dyzur>());
                 ModelSzpitala.Szpital.SzpitalInstance.DodajPracownika(lekarz);
-                MessageBox.Show("Utworzono pracownika: lekarz");
             }
 
             if (rodzajPracownika == "Pielęgniarka")
             {
                 Pielegniarka pielegniarka = new Pielegniarka(imie, nazwisko, pesel, login, haslo, new List<Dyzur>());
                 ModelSzpitala.Szpital.SzpitalInstance.DodajPracownika(pielegniarka);
-                MessageBox.Show("Utworzono pracownika: pielęgniarka");
             }
 
         }
