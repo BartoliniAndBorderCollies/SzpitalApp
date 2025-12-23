@@ -93,6 +93,16 @@ namespace SzpitalApp.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Views_of_a_Foetus_in_the_Womb {
+            get {
+                object obj = ResourceManager.GetObject("Views_of_a_Foetus_in_the_Womb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Warszawa_Centrum_Zdrowia_Dziecka {
             get {
                 object obj = ResourceManager.GetObject("Warszawa-Centrum_Zdrowia_Dziecka", resourceCulture);
