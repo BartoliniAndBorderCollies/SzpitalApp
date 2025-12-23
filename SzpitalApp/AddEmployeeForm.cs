@@ -126,6 +126,5 @@ namespace SzpitalApp
             return true;
 
         }
-
     }
 }

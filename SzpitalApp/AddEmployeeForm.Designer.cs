@@ -145,7 +145,7 @@
             // 
             cmbSpecjalnosc.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
             cmbSpecjalnosc.FormattingEnabled = true;
-            cmbSpecjalnosc.Items.AddRange(new object[] { "Kardiolog", "Neurolog", "Laryngolog" });
+            cmbSpecjalnosc.Items.AddRange(new object[] { "Kardiolog", "Laryngolog", "Neurolog", "Urolog" });
             cmbSpecjalnosc.Location = new Point(27, 593);
             cmbSpecjalnosc.Name = "cmbSpecjalnosc";
             cmbSpecjalnosc.Size = new Size(302, 48);
