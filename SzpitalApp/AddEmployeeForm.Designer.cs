@@ -46,53 +46,64 @@
             // 
             // cmbRodzajPracownika
             // 
+            cmbRodzajPracownika.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
             cmbRodzajPracownika.FormattingEnabled = true;
             cmbRodzajPracownika.Items.AddRange(new object[] { "Lekarz", "Pielęgniarka" });
-            cmbRodzajPracownika.Location = new Point(50, 224);
+            cmbRodzajPracownika.Location = new Point(27, 224);
             cmbRodzajPracownika.Name = "cmbRodzajPracownika";
-            cmbRodzajPracownika.Size = new Size(331, 40);
+            cmbRodzajPracownika.Size = new Size(368, 48);
             cmbRodzajPracownika.TabIndex = 0;
             cmbRodzajPracownika.Text = "Wybierz rodzaj pracownika";
             cmbRodzajPracownika.SelectedIndexChanged += cmbRodzajPracownika_SelectedIndexChanged;
             // 
             // txtImie
             // 
-            txtImie.Location = new Point(50, 335);
+            txtImie.Font = new Font("Segoe UI", 10.875F);
+            txtImie.Location = new Point(27, 335);
+            txtImie.Multiline = true;
             txtImie.Name = "txtImie";
             txtImie.PlaceholderText = "Imię";
-            txtImie.Size = new Size(200, 39);
+            txtImie.Size = new Size(302, 50);
             txtImie.TabIndex = 1;
             // 
             // txtNazwisko
             // 
-            txtNazwisko.Location = new Point(50, 465);
+            txtNazwisko.Font = new Font("Segoe UI", 10.875F);
+            txtNazwisko.Location = new Point(27, 465);
+            txtNazwisko.Multiline = true;
             txtNazwisko.Name = "txtNazwisko";
             txtNazwisko.PlaceholderText = "Nazwisko";
-            txtNazwisko.Size = new Size(200, 39);
+            txtNazwisko.Size = new Size(302, 50);
             txtNazwisko.TabIndex = 2;
             // 
             // txtPesel
             // 
+            txtPesel.Font = new Font("Segoe UI", 10.875F);
             txtPesel.Location = new Point(440, 224);
+            txtPesel.Multiline = true;
             txtPesel.Name = "txtPesel";
             txtPesel.PlaceholderText = "Pesel";
-            txtPesel.Size = new Size(200, 39);
+            txtPesel.Size = new Size(301, 50);
             txtPesel.TabIndex = 3;
             // 
             // txtLogin
             // 
+            txtLogin.Font = new Font("Segoe UI", 10.875F);
             txtLogin.Location = new Point(440, 335);
+            txtLogin.Multiline = true;
             txtLogin.Name = "txtLogin";
             txtLogin.PlaceholderText = "Login";
-            txtLogin.Size = new Size(200, 39);
+            txtLogin.Size = new Size(301, 50);
             txtLogin.TabIndex = 4;
             // 
             // txtHaslo
             // 
+            txtHaslo.Font = new Font("Segoe UI", 10.875F);
             txtHaslo.Location = new Point(440, 465);
+            txtHaslo.Multiline = true;
             txtHaslo.Name = "txtHaslo";
             txtHaslo.PlaceholderText = "Hasło";
-            txtHaslo.Size = new Size(200, 39);
+            txtHaslo.Size = new Size(301, 50);
             txtHaslo.TabIndex = 5;
             txtHaslo.UseSystemPasswordChar = true;
             txtHaslo.TextChanged += txtHaslo_TextChanged;
@@ -102,9 +113,9 @@
             btnZapisz.BackColor = SystemColors.GrayText;
             btnZapisz.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnZapisz.ForeColor = SystemColors.ButtonHighlight;
-            btnZapisz.Location = new Point(85, 827);
+            btnZapisz.Location = new Point(75, 827);
             btnZapisz.Name = "btnZapisz";
-            btnZapisz.Size = new Size(207, 112);
+            btnZapisz.Size = new Size(218, 112);
             btnZapisz.TabIndex = 6;
             btnZapisz.Text = "Zapisz";
             btnZapisz.UseVisualStyleBackColor = false;
@@ -112,7 +123,7 @@
             // 
             // btnAnuluj
             // 
-            btnAnuluj.Location = new Point(440, 827);
+            btnAnuluj.Location = new Point(465, 827);
             btnAnuluj.Name = "btnAnuluj";
             btnAnuluj.Size = new Size(218, 112);
             btnAnuluj.TabIndex = 7;
@@ -123,30 +134,33 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label1.Location = new Point(213, 71);
+            label1.Font = new Font("Segoe UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            label1.Location = new Point(186, 71);
             label1.Name = "label1";
-            label1.Size = new Size(348, 45);
+            label1.Size = new Size(403, 50);
             label1.TabIndex = 8;
             label1.Text = "Dodawanie pracownika";
             // 
             // cmbSpecjalnosc
             // 
+            cmbSpecjalnosc.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
             cmbSpecjalnosc.FormattingEnabled = true;
             cmbSpecjalnosc.Items.AddRange(new object[] { "Kardiolog", "Neurolog", "Laryngolog" });
-            cmbSpecjalnosc.Location = new Point(50, 593);
+            cmbSpecjalnosc.Location = new Point(27, 593);
             cmbSpecjalnosc.Name = "cmbSpecjalnosc";
-            cmbSpecjalnosc.Size = new Size(242, 40);
+            cmbSpecjalnosc.Size = new Size(302, 48);
             cmbSpecjalnosc.TabIndex = 9;
             cmbSpecjalnosc.Text = "Specjalność";
             cmbSpecjalnosc.Visible = false;
             // 
             // txtPWZ
             // 
+            txtPWZ.Font = new Font("Segoe UI", 10.875F);
             txtPWZ.Location = new Point(440, 593);
+            txtPWZ.Multiline = true;
             txtPWZ.Name = "txtPWZ";
             txtPWZ.PlaceholderText = "PWZ";
-            txtPWZ.Size = new Size(200, 39);
+            txtPWZ.Size = new Size(301, 50);
             txtPWZ.TabIndex = 10;
             txtPWZ.Visible = false;
             // 
