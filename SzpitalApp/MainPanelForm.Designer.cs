@@ -71,35 +71,42 @@
             // 
             // btnUsunPracownika
             // 
+            btnUsunPracownika.BackColor = SystemColors.GrayText;
+            btnUsunPracownika.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnUsunPracownika.ForeColor = SystemColors.ButtonHighlight;
             btnUsunPracownika.Location = new Point(22, 312);
             btnUsunPracownika.Name = "btnUsunPracownika";
             btnUsunPracownika.Size = new Size(257, 160);
             btnUsunPracownika.TabIndex = 3;
             btnUsunPracownika.Text = "Usuń pracownika";
-            btnUsunPracownika.UseVisualStyleBackColor = true;
+            btnUsunPracownika.UseVisualStyleBackColor = false;
             btnUsunPracownika.Click += btnUsunPracownika_Click;
             // 
             // btnDodajPracownika
             // 
-            btnDodajPracownika.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            btnDodajPracownika.BackColor = SystemColors.GrayText;
+            btnDodajPracownika.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnDodajPracownika.ForeColor = SystemColors.ButtonHighlight;
             btnDodajPracownika.Location = new Point(22, 75);
             btnDodajPracownika.Name = "btnDodajPracownika";
             btnDodajPracownika.Size = new Size(257, 181);
             btnDodajPracownika.TabIndex = 1;
             btnDodajPracownika.Text = "Dodaj pracownika";
-            btnDodajPracownika.UseVisualStyleBackColor = true;
+            btnDodajPracownika.UseVisualStyleBackColor = false;
             btnDodajPracownika.Click += btnDodajPracownika_Click;
             // 
             // btnListaPracownikow
             // 
             btnListaPracownikow.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnListaPracownikow.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            btnListaPracownikow.BackColor = SystemColors.GrayText;
+            btnListaPracownikow.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnListaPracownikow.ForeColor = SystemColors.ButtonHighlight;
             btnListaPracownikow.Location = new Point(22, 538);
             btnListaPracownikow.Name = "btnListaPracownikow";
             btnListaPracownikow.Size = new Size(257, 170);
             btnListaPracownikow.TabIndex = 0;
-            btnListaPracownikow.Text = "Lista pracowników i ich edycja";
-            btnListaPracownikow.UseVisualStyleBackColor = true;
+            btnListaPracownikow.Text = "Lista pracowników   i ich edycja";
+            btnListaPracownikow.UseVisualStyleBackColor = false;
             btnListaPracownikow.Click += btnListaPracownikow_Click;
             // 
             // panelBackground
