@@ -66,6 +66,7 @@
             btnEdytuj.TabIndex = 1;
             btnEdytuj.Text = "Edytuj";
             btnEdytuj.UseVisualStyleBackColor = false;
+            btnEdytuj.Click += btnEdytuj_Click;
             // 
             // btnAnuluj
             // 

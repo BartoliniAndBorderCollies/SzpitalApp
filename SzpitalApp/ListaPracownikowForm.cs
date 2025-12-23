@@ -13,6 +13,8 @@ namespace SzpitalApp
 {
     public partial class ListaPracownikowForm : BaseForm
     {
+        private bool trybEdycji = false;
+
         public ListaPracownikowForm()
         {
             InitializeComponent();
@@ -20,26 +22,50 @@ namespace SzpitalApp
 
         private void ListaPracownikowForm_Load(object sender, EventArgs e)
         {
-            var pracownicy = Szpital.SzpitalInstance.DostepDoListyPracownikow;
+            dataGridViewPracownicy.DataSource = Szpital.SzpitalInstance.DostepDoListyPracownikow;
 
-            dataGridViewPracownicy.DataSource = pracownicy.Select(p => new
-            {
-                id = p.Id,
-                Imie = p.Imie,
-                Nazwisko = p.Nazwisko,
-                Rola = p.GetType().Name,
-                Specjalnosc = (p is Lekarz lekarz) ? lekarz.PokazSpecjalnosc.ToString() : "",
-                NumerPWZ = (p is Lekarz lekarz2) ? lekarz2.PokazPWZ.ToString() : "",
-                PESEL = p.Pesel,
-                Login = p.NazwaUzytkownika,
-                Haslo = p.HashHasla
-
-            }).ToList();
+            dataGridViewPracownicy.Columns["Id"].ReadOnly = true;
+            dataGridViewPracownicy.Columns["HashHasla"].Visible = false;
         }
+
 
         private void btnAnuluj_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void btnEdytuj_Click(object sender, EventArgs e)
+        {
+
+            if (!trybEdycji)
+            {
+                trybEdycji = true;
+                dataGridViewPracownicy.ReadOnly = false;
+                btnEdytuj.Text = "Zapisz";
+
+                MessageBox.Show("Tryb edycji włączony");
+
+            }
+            else
+            {
+
+                var result = MessageBox.Show(
+                    "Czy zapisać zmiany?",
+                    "Potwierdzenie zapisu",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+
+                    dataGridViewPracownicy.ReadOnly = true;
+                    trybEdycji = false;
+                    btnEdytuj.Text = "Edytuj";
+
+                    MessageBox.Show("Zmiany zapisane");
+                }
+            }
+        }
     }
 }
+
