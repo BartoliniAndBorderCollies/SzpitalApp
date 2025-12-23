@@ -48,7 +48,7 @@
             // 
             cmbRodzajPracownika.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 238);
             cmbRodzajPracownika.FormattingEnabled = true;
-            cmbRodzajPracownika.Items.AddRange(new object[] { "Lekarz", "Pielęgniarka" });
+            cmbRodzajPracownika.Items.AddRange(new object[] { "Administrator", "Lekarz", "Pielęgniarka" });
             cmbRodzajPracownika.Location = new Point(27, 224);
             cmbRodzajPracownika.Name = "cmbRodzajPracownika";
             cmbRodzajPracownika.Size = new Size(368, 48);

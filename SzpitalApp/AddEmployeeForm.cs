@@ -96,6 +96,12 @@ namespace SzpitalApp
                 ModelSzpitala.Szpital.SzpitalInstance.DodajPracownika(pielegniarka);
             }
 
+            if(rodzajPracownika == "Administrator")
+            {
+                Administrator administrator = new Administrator(imie, nazwisko, pesel, login, haslo);
+                ModelSzpitala.Szpital.SzpitalInstance.DodajPracownika(administrator);
+            }
+
         }
 
         private bool CzyPodanoWszystkieDane(string rodzajPracownika, string imie, string nazwisko, string pesel, string login, string haslo, Specjalnosc specjalnosc, int PWZ)
