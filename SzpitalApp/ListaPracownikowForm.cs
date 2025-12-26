@@ -18,15 +18,115 @@ namespace SzpitalApp
         public ListaPracownikowForm()
         {
             InitializeComponent();
+            dataGridViewPracownicy.CellFormatting += dataGridViewPracownicy_CellFormatting;
         }
 
         private void ListaPracownikowForm_Load(object sender, EventArgs e)
         {
+
+            dataGridViewPracownicy.AutoGenerateColumns = false;
+            dataGridViewPracownicy.Columns.Clear();
+            dataGridViewPracownicy.ReadOnly = true;
+
+
+            dataGridViewPracownicy.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Id",
+                HeaderText = "ID",
+                ReadOnly = true,
+                Name = "Id"
+            });
+
+            dataGridViewPracownicy.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Typ pracownika",
+                Name = "TypPracownika",
+                ReadOnly = true
+            });
+
+            dataGridViewPracownicy.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Imie",
+                HeaderText = "Imię",
+                Name = "Imie"
+
+            });
+
+            dataGridViewPracownicy.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Nazwisko",
+                HeaderText = "Nazwisko",
+                Name = "Nazwisko"
+
+            });
+
+            dataGridViewPracownicy.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Pesel",
+                HeaderText = "PESEL",
+                Name = "Pesel"
+
+            });
+
+            dataGridViewPracownicy.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "NazwaUzytkownika",
+                HeaderText = "Login",
+                Name = "NazwaUzytkownika"
+
+            });
+
+            dataGridViewPracownicy.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Specjalność",
+                Name = "Specjalnosc",
+                ReadOnly = true
+            });
+
+            dataGridViewPracownicy.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "PWZ",
+                Name = "PWZ",
+                ReadOnly = true
+            });
+
+            dataGridViewPracownicy.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "HashHasla",
+                HeaderText = "Zahashowane hasło",
+                Name = "HashHasla"
+
+            });
+
             dataGridViewPracownicy.DataSource = Szpital.SzpitalInstance.DostepDoListyPracownikow;
 
-            dataGridViewPracownicy.Columns["Id"].ReadOnly = true;
-            dataGridViewPracownicy.Columns["HashHasla"].Visible = false;
         }
+
+        private void dataGridViewPracownicy_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+
+        {
+            if (e.RowIndex < 0) return;
+
+            var pracownik = dataGridViewPracownicy.Rows[e.RowIndex].DataBoundItem as Pracownik;
+
+            if (pracownik == null) return;
+
+            var column = dataGridViewPracownicy.Columns[e.ColumnIndex].Name;
+
+            if (column == "TypPracownika")
+            {
+                e.Value = pracownik.GetType().Name;
+            }
+            else if (column == "Specjalnosc")
+            {
+                e.Value = pracownik is Lekarz lekarz ? lekarz.PokazSpecjalnosc.ToString() : "";
+            }
+            else if (column == "PWZ")
+            {
+                e.Value = pracownik is Lekarz lekarz ? lekarz.PokazPWZ.ToString() : "";
+            }
+        }
+
 
 
         private void btnAnuluj_Click(object sender, EventArgs e)
