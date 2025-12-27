@@ -90,6 +90,16 @@ namespace SzpitalApp
                 ReadOnly = true
             });
 
+            dataGridViewPracownicy.Columns.Add(new DataGridViewButtonColumn
+            {
+                HeaderText = "Dyżury",
+                Text = "Zobacz",
+                UseColumnTextForButtonValue = true,
+                Name = "Dyzury",
+                ReadOnly = true
+            });
+
+
             dataGridViewPracownicy.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "HashHasla",
@@ -126,6 +136,21 @@ namespace SzpitalApp
                 e.Value = pracownik is Lekarz lekarz ? lekarz.PokazPWZ.ToString() : "";
             }
         }
+
+        private void dataGridViewPracownicy_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            if (dataGridViewPracownicy.Columns[e.ColumnIndex].Name == "Dyzury")
+            {
+                var pracownik =
+                    dataGridViewPracownicy.Rows[e.RowIndex].DataBoundItem as Pracownik;
+
+                var form = new DyzuryPracownikaForm(pracownik);
+                form.ShowDialog();
+            }
+        }
+
 
 
 
