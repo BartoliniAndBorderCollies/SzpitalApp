@@ -141,7 +141,7 @@
             Controls.Add(blackPanel);
             MaximumSize = new Size(2304, 1219);
             Name = "MainPanelForm";
-            Text = "AdminPanel";
+            Text = "Panel główny";
             panelContent.ResumeLayout(false);
             blackPanel.ResumeLayout(false);
             ResumeLayout(false);

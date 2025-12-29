@@ -82,7 +82,7 @@
             Controls.Add(lblText);
             Controls.Add(mthCalendar);
             Name = "AddDyzurForm";
-            Text = "AddDyzurForm";
+            Text = "Dodawanie dyżuru";
             ResumeLayout(false);
             PerformLayout();
         }

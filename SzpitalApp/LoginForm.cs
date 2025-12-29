@@ -9,6 +9,7 @@ namespace SzpitalApp
             InitializeComponent();
             UstawMaxRozmiar();
             this.AcceptButton = btnZaloguj;
+            this.MaximizeBox = false;
         }
 
         private void UstawMaxRozmiar()

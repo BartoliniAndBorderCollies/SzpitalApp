@@ -200,7 +200,7 @@
             Controls.Add(panelBackground);
             Controls.Add(panelContent);
             Name = "AddEmployeeForm";
-            Text = "AddEmployeeForm";
+            Text = "Dodawanie pracownika";
             panelContent.ResumeLayout(false);
             panelContent.PerformLayout();
             ResumeLayout(false);

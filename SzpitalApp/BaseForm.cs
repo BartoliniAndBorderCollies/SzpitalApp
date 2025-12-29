@@ -17,6 +17,7 @@ namespace SzpitalApp
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             MinimumSize = new Size(800, 600);
+            this.MaximizeBox = false;
         }
 
         protected override void OnShown(EventArgs e)

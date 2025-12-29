@@ -120,7 +120,7 @@
             ClientSize = new Size(2278, 1148);
             Controls.Add(mainGridPanel);
             Name = "ListaPracownikowForm";
-            Text = "ListaPracownikowForm";
+            Text = "Lista pracowników";
             Load += ListaPracownikowForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewPracownicy).EndInit();
             bottomPanel.ResumeLayout(false);

@@ -105,7 +105,7 @@
             Controls.Add(lblPracownik);
             Controls.Add(dataGridViewDyzury);
             Name = "DyzuryPracownikaForm";
-            Text = "DyzuryPracownikaForm";
+            Text = "Dyżury pracownika";
             ((System.ComponentModel.ISupportInitialize)dataGridViewDyzury).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -88,14 +88,14 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(2278, 1148);
             Controls.Add(label1);
             Controls.Add(btnAnuluj);
             Controls.Add(btnUsun);
             Controls.Add(txtPodajPesel);
             Controls.Add(lblUsuwaniePracownika);
             Name = "RemoveEmployeeForm";
-            Text = "RemoveEmployeeForm";
+            Text = "Usuwanie pracownika";
             ResumeLayout(false);
             PerformLayout();
         }
