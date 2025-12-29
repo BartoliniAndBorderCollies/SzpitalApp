@@ -100,10 +100,9 @@
             // 
             txtHaslo.Font = new Font("Segoe UI", 10.875F);
             txtHaslo.Location = new Point(440, 465);
-            txtHaslo.Multiline = true;
             txtHaslo.Name = "txtHaslo";
             txtHaslo.PlaceholderText = "Hasło";
-            txtHaslo.Size = new Size(301, 50);
+            txtHaslo.Size = new Size(301, 46);
             txtHaslo.TabIndex = 5;
             txtHaslo.UseSystemPasswordChar = true;
             txtHaslo.TextChanged += txtHaslo_TextChanged;
