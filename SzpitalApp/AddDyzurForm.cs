@@ -20,6 +20,7 @@ namespace SzpitalApp
             _pracownik = pracownik;
             InitializeComponent();
             this.MaximizeBox = false;
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnZapisz_Click(object sender, EventArgs e)
@@ -27,28 +28,35 @@ namespace SzpitalApp
             DateTime dataRozpoczecia = mthCalendar.SelectionStart;
             DateTime dataZakonczenia = dataRozpoczecia.AddDays(1);
 
+            string komunikat = "";
+
             Dyzur dyzur = new Dyzur(_pracownik, dataRozpoczecia, dataZakonczenia);
 
             if (_pracownik is Lekarz lekarz)
             {
-                lekarz.DodajDyzur(dyzur);
+                komunikat = lekarz.DodajDyzur(dyzur);
+                
             }
             else if (_pracownik is Pielegniarka pielegniarka)
             {
-                pielegniarka.DodajDyzur(dyzur);
+                komunikat = pielegniarka.DodajDyzur(dyzur);
+   
 
             }
             else if (_pracownik is Administrator)
             {
-                MessageBox.Show("Nie można przypisać dyżuru administratorowi!");
-                this.Close();
-                
+                komunikat = "Nie można przypisać dyżuru administratorowi!";
+              
             }
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            MessageBox.Show(komunikat);
 
+            if(komunikat == "Dyżur dodany")
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
 
+            }
         }
 
         private void btnAnuluj_Click(object sender, EventArgs e)

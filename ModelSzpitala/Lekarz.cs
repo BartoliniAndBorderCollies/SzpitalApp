@@ -65,29 +65,29 @@ namespace ModelSzpitala
         }
 
 
-        public void DodajDyzur(Dyzur dyzur)
+        public string DodajDyzur(Dyzur dyzur)
         {
 
             if (SprawdzLiczbeDyzurowWMiesiacu(dyzur) >= 10)
             {
-                Console.WriteLine("Nie można mieć więcej niż 10 dyżurów miesięcznie");
-                return;
+                return "Nie można mieć więcej niż 10 dyżurów miesięcznie";
+
             }
 
             if (SprawdzDyzurDzienPoDniu(dyzur))
             {
-                Console.WriteLine("Nie można mieć dyzuru dzień po dniu");
-                return;
+                return "Nie można mieć dyżuru dzień po dniu ani w ten sam dzień";
+                
             }
 
             if (Szpital.SzpitalInstance.CzyDyzurMaLekarzTakaSamaSpecjalizacja(this, dyzur))
             {
-                Console.WriteLine("W tym dniu dyżur ma już lekarz z tą specjalizacją");
-                return;
+                return "W tym dniu dyżur ma już lekarz z tą specjalizacją";
+                
             }
 
             _listaDyzurow.Add(dyzur);
-            Console.WriteLine("Dyżur dodany");
+            return "Dyżur dodany";
         }
 
         private bool SprawdzDyzurDzienPoDniu(Dyzur dyzur)
@@ -97,7 +97,8 @@ namespace ModelSzpitala
             {
                 if (dyzur.DataRozpoczecia.Date == d.DataZakonczenia.Date.AddDays(1) ||
                     dyzur.DataRozpoczecia.Date == d.DataRozpoczecia.Date.AddDays(-1) ||
-                    dyzur.DataRozpoczecia.Date == d.DataZakonczenia.Date)
+                    dyzur.DataRozpoczecia.Date == d.DataZakonczenia.Date ||
+                    dyzur.DataRozpoczecia.Date == d.DataRozpoczecia.Date)
                 {
                     return true;
                 }

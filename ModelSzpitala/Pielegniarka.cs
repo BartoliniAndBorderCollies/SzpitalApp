@@ -39,22 +39,22 @@ namespace ModelSzpitala
 
         }
 
-        public void DodajDyzur(Dyzur dyzur)
+        public string DodajDyzur(Dyzur dyzur)
         {
             if (SprawdzLiczbeDyzurowWMiesiacu(dyzur) >= 10)
             {
-                Console.WriteLine("Nie można miec więcej niż 10 dyżurów miesięcznie");
-                return;
+                
+                return "Nie można miec więcej niż 10 dyżurów miesięcznie";
             }
 
             if (SprawdzDyzurDzienPoDniu(dyzur))
             {
-                Console.WriteLine("Nie można mieć dyzuru dzień po dniu");
-                return;
+                return "Nie można mieć dyzuru dzień po dniu";
+               
             }
 
             _listaDyzurow.Add(dyzur);
-            Console.WriteLine("Dodano dyżur");
+            return "Dodano dyżur";
         }
 
         public IReadOnlyList<Dyzur> PokazDyzurWybranejOsoby(string imie, string nazwisko)
