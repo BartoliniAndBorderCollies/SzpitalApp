@@ -19,6 +19,7 @@ namespace SzpitalApp
         {
             InitializeComponent();
             dataGridViewPracownicy.CellFormatting += dataGridViewPracownicy_CellFormatting;
+            dataGridViewPracownicy.CellContentClick += dataGridViewPracownicy_CellContentClick;
         }
 
         private void ListaPracownikowForm_Load(object sender, EventArgs e)
@@ -143,8 +144,7 @@ namespace SzpitalApp
 
             if (dataGridViewPracownicy.Columns[e.ColumnIndex].Name == "Dyzury")
             {
-                var pracownik =
-                    dataGridViewPracownicy.Rows[e.RowIndex].DataBoundItem as Pracownik;
+                var pracownik = dataGridViewPracownicy.Rows[e.RowIndex].DataBoundItem as Pracownik;
 
                 var form = new DyzuryPracownikaForm(pracownik);
                 form.ShowDialog();
