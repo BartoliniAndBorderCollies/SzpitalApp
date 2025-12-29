@@ -36,7 +36,7 @@ namespace SzpitalApp
 
             if (pracownik == null)
             {
-                MessageBox.Show("Has³o lub login jest niepoprawne!");
+                MessageBox.Show("Has³o lub login jest niepoprawne!", "B³êdne dane");
                 txtLogin.Clear();
                 txtHaslo.Clear();
                 txtLogin.Focus();

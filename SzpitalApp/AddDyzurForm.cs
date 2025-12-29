@@ -49,7 +49,7 @@ namespace SzpitalApp
               
             }
 
-            MessageBox.Show(komunikat);
+            MessageBox.Show(komunikat, "Informacja");
 
             if(komunikat == "Dyżur dodany")
             {

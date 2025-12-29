@@ -66,7 +66,7 @@ namespace SzpitalApp
             int PWZ = 0;
             if (!int.TryParse(txtPWZ.Text, out PWZ) && rodzajPracownika == "Lekarz")
             {
-                MessageBox.Show("PWZ musi być liczbą!");
+                MessageBox.Show("PWZ musi być liczbą!" ,"Niepoprawny format danych");
                 return;
             }
 
@@ -113,19 +113,19 @@ namespace SzpitalApp
                 string.IsNullOrWhiteSpace(login) ||
                 string.IsNullOrWhiteSpace(haslo))
             {
-                MessageBox.Show("Uzupełnij wszystkie pola!");
+                MessageBox.Show("Uzupełnij wszystkie pola!", "Brakuje pewnych danych");
                 return false;
             }
 
             if (rodzajPracownika == "Lekarz" && cmbSpecjalnosc.SelectedItem == null)
             {
-                MessageBox.Show("Wybierz specjalność lekarza!");
+                MessageBox.Show("Wybierz specjalność lekarza!", "Błąd specjalności");
                 return false;
             }
 
             if (rodzajPracownika == "Lekarz" && PWZ == 0)
             {
-                MessageBox.Show("Wpisz PWZ lekarza!");
+                MessageBox.Show("Wpisz PWZ lekarza!", "Błąd PWZ");
                 return false;
             }
 

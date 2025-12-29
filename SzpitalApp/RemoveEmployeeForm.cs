@@ -29,12 +29,12 @@ namespace SzpitalApp
                 if (pesel == pracownik.Pesel)
                 {
                     Szpital.SzpitalInstance.UsunPracownika(pesel);
-                    MessageBox.Show("Pomyślnie usunięto pracownika!");
+                    MessageBox.Show("Pomyślnie usunięto pracownika!", "Potwierdzenie");
                     this.Close();
                     return;
                 }
             }
-                MessageBox.Show("Nie znaleziono pracownika z podanym numerem PESEL");
+                MessageBox.Show("Nie znaleziono pracownika z podanym numerem PESEL", "Informacja");
                 return;
         }
 
