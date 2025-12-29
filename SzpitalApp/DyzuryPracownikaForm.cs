@@ -50,16 +50,43 @@ namespace SzpitalApp
 
             if (_pracownik is Lekarz lekarz)
             {
-                dataGridViewDyzury.DataSource =
-                    new BindingList<Dyzur>(lekarz.PokazListeDyzurow.ToList());
+                dataGridViewDyzury.DataSource = new BindingList<Dyzur>(lekarz.PokazListeDyzurow.ToList());
             }
 
-            if (_pracownik is Pielegniarka pielegniarka)
+            else if (_pracownik is Pielegniarka pielegniarka)
             {
-                dataGridViewDyzury.DataSource =
-                    new BindingList<Dyzur>(pielegniarka.PokazListeDyzurow.ToList());
+                dataGridViewDyzury.DataSource = new BindingList<Dyzur>(pielegniarka.PokazListeDyzurow.ToList());
             }
 
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            AddDyzurForm addDyzurForm = new AddDyzurForm(_pracownik);
+
+            if (addDyzurForm.ShowDialog() == DialogResult.OK)
+            {
+                OdswiezListeDyzurow();
+            }
+        }
+
+        private void OdswiezListeDyzurow()
+        {
+            if (_pracownik is Lekarz lekarz)
+            {
+                dataGridViewDyzury.DataSource = null;
+                dataGridViewDyzury.DataSource = new BindingList<Dyzur>(lekarz.PokazListeDyzurow.ToList());
+            }
+            else if (_pracownik is Pielegniarka pielegniarka)
+            {
+                dataGridViewDyzury.DataSource = null;
+                dataGridViewDyzury.DataSource = new BindingList<Dyzur>(pielegniarka.PokazListeDyzurow.ToList());
+            }
+        }
+
+        private void btnZamknij_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

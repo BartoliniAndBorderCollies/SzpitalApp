@@ -32,6 +32,7 @@
             lblPracownik = new Label();
             btnDodaj = new Button();
             btnUsun = new Button();
+            btnZamknij = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDyzury).BeginInit();
             SuspendLayout();
             // 
@@ -62,31 +63,43 @@
             btnDodaj.BackColor = SystemColors.GrayText;
             btnDodaj.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnDodaj.ForeColor = SystemColors.ButtonHighlight;
-            btnDodaj.Location = new Point(626, 126);
+            btnDodaj.Location = new Point(626, 94);
             btnDodaj.Name = "btnDodaj";
             btnDodaj.Size = new Size(150, 82);
             btnDodaj.TabIndex = 2;
             btnDodaj.Text = "Dodaj";
             btnDodaj.UseVisualStyleBackColor = false;
+            btnDodaj.Click += btnDodaj_Click;
             // 
             // btnUsun
             // 
             btnUsun.BackColor = SystemColors.GrayText;
             btnUsun.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnUsun.ForeColor = SystemColors.ButtonHighlight;
-            btnUsun.Location = new Point(626, 262);
+            btnUsun.Location = new Point(626, 216);
             btnUsun.Name = "btnUsun";
             btnUsun.Size = new Size(150, 82);
             btnUsun.TabIndex = 3;
             btnUsun.Text = "Usuń";
             btnUsun.UseVisualStyleBackColor = false;
             // 
+            // btnZamknij
+            // 
+            btnZamknij.Location = new Point(626, 349);
+            btnZamknij.Name = "btnZamknij";
+            btnZamknij.Size = new Size(150, 46);
+            btnZamknij.TabIndex = 4;
+            btnZamknij.Text = "Zamknij";
+            btnZamknij.UseVisualStyleBackColor = true;
+            btnZamknij.Click += btnZamknij_Click;
+            // 
             // DyzuryPracownikaForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GrayText;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnZamknij);
             Controls.Add(btnUsun);
             Controls.Add(btnDodaj);
             Controls.Add(lblPracownik);
@@ -104,5 +117,6 @@
         private Label lblPracownik;
         private Button btnDodaj;
         private Button btnUsun;
+        private Button btnZamknij;
     }
 }
