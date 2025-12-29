@@ -168,7 +168,7 @@ namespace SzpitalApp
                 dataGridViewPracownicy.ReadOnly = false;
                 btnEdytuj.Text = "Zapisz";
 
-                MessageBox.Show("Tryb edycji włączony");
+                MessageBox.Show("Tryb edycji włączony - możesz edytować wartości w kolumnach");
 
             }
             else
