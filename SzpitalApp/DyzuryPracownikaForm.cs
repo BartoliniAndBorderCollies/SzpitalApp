@@ -14,6 +14,8 @@ namespace SzpitalApp
     public partial class DyzuryPracownikaForm : Form
     {
         private Pracownik _pracownik;
+        private BindingList<Dyzur> _bindingDyzurow;
+
 
         public DyzuryPracownikaForm(Pracownik pracownik)
         {
@@ -48,15 +50,17 @@ namespace SzpitalApp
                 Name = "DataZakonczenia"
             });
 
+
             if (_pracownik is Lekarz lekarz)
             {
-                dataGridViewDyzury.DataSource = new BindingList<Dyzur>(lekarz.PokazListeDyzurow.ToList());
+                _bindingDyzurow = new BindingList<Dyzur>(lekarz.PokazListeDyzurow);
             }
-
             else if (_pracownik is Pielegniarka pielegniarka)
             {
-                dataGridViewDyzury.DataSource = new BindingList<Dyzur>(pielegniarka.PokazListeDyzurow.ToList());
+                _bindingDyzurow = new BindingList<Dyzur>(pielegniarka.PokazListeDyzurow);
             }
+
+            dataGridViewDyzury.DataSource = _bindingDyzurow;
 
         }
 
@@ -72,16 +76,8 @@ namespace SzpitalApp
 
         private void OdswiezListeDyzurow()
         {
-            if (_pracownik is Lekarz lekarz)
-            {
-                dataGridViewDyzury.DataSource = null;
-                dataGridViewDyzury.DataSource = new BindingList<Dyzur>(lekarz.PokazListeDyzurow.ToList());
-            }
-            else if (_pracownik is Pielegniarka pielegniarka)
-            {
-                dataGridViewDyzury.DataSource = null;
-                dataGridViewDyzury.DataSource = new BindingList<Dyzur>(pielegniarka.PokazListeDyzurow.ToList());
-            }
+            _bindingDyzurow.ResetBindings();
+
         }
 
         private void btnZamknij_Click(object sender, EventArgs e)

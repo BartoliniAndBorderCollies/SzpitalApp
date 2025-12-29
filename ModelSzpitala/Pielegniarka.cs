@@ -44,17 +44,17 @@ namespace ModelSzpitala
             if (SprawdzLiczbeDyzurowWMiesiacu(dyzur) >= 10)
             {
                 
-                return "Nie można miec więcej niż 10 dyżurów miesięcznie";
+                return "Nie można mieć więcej niż 10 dyżurów miesięcznie";
             }
 
             if (SprawdzDyzurDzienPoDniu(dyzur))
             {
-                return "Nie można mieć dyzuru dzień po dniu";
+                return "Nie można mieć dyżuru dzień po dniu, ani w ten sam dzień!";
                
             }
 
             _listaDyzurow.Add(dyzur);
-            return "Dodano dyżur";
+            return "Dyżur dodany";
         }
 
         public IReadOnlyList<Dyzur> PokazDyzurWybranejOsoby(string imie, string nazwisko)
@@ -70,7 +70,8 @@ namespace ModelSzpitala
             {
                 if (dyzur.DataRozpoczecia.Date == d.DataZakonczenia.Date.AddDays(1) ||
                     dyzur.DataRozpoczecia.Date == d.DataRozpoczecia.Date.AddDays(-1) ||
-                    dyzur.DataRozpoczecia.Date == d.DataZakonczenia.Date)
+                    dyzur.DataRozpoczecia.Date == d.DataZakonczenia.Date ||
+                    dyzur.DataRozpoczecia.Date == d.DataRozpoczecia.Date)
                 {
                     return true;
                 }
