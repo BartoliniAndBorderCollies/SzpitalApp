@@ -30,17 +30,18 @@
         {
             dataGridViewDyzury = new DataGridView();
             lblPracownik = new Label();
+            btnDodaj = new Button();
+            btnUsun = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDyzury).BeginInit();
             SuspendLayout();
             // 
             // dataGridViewDyzury
             // 
             dataGridViewDyzury.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewDyzury.Dock = DockStyle.Bottom;
-            dataGridViewDyzury.Location = new Point(0, 59);
+            dataGridViewDyzury.Location = new Point(0, 65);
             dataGridViewDyzury.Name = "dataGridViewDyzury";
             dataGridViewDyzury.RowHeadersWidth = 82;
-            dataGridViewDyzury.Size = new Size(800, 391);
+            dataGridViewDyzury.Size = new Size(576, 385);
             dataGridViewDyzury.TabIndex = 0;
             // 
             // lblPracownik
@@ -56,12 +57,38 @@
             lblPracownik.TabIndex = 1;
             lblPracownik.Text = "label1";
             // 
+            // btnDodaj
+            // 
+            btnDodaj.BackColor = SystemColors.GrayText;
+            btnDodaj.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnDodaj.ForeColor = SystemColors.ButtonHighlight;
+            btnDodaj.Location = new Point(626, 126);
+            btnDodaj.Name = "btnDodaj";
+            btnDodaj.Size = new Size(150, 82);
+            btnDodaj.TabIndex = 2;
+            btnDodaj.Text = "Dodaj";
+            btnDodaj.UseVisualStyleBackColor = false;
+            // 
+            // btnUsun
+            // 
+            btnUsun.BackColor = SystemColors.GrayText;
+            btnUsun.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnUsun.ForeColor = SystemColors.ButtonHighlight;
+            btnUsun.Location = new Point(626, 262);
+            btnUsun.Name = "btnUsun";
+            btnUsun.Size = new Size(150, 82);
+            btnUsun.TabIndex = 3;
+            btnUsun.Text = "Usuń";
+            btnUsun.UseVisualStyleBackColor = false;
+            // 
             // DyzuryPracownikaForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GrayText;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnUsun);
+            Controls.Add(btnDodaj);
             Controls.Add(lblPracownik);
             Controls.Add(dataGridViewDyzury);
             Name = "DyzuryPracownikaForm";
@@ -75,5 +102,7 @@
 
         private DataGridView dataGridViewDyzury;
         private Label lblPracownik;
+        private Button btnDodaj;
+        private Button btnUsun;
     }
 }
