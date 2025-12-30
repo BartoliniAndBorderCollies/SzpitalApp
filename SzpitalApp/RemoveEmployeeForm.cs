@@ -11,10 +11,12 @@ using System.Windows.Forms;
 
 namespace SzpitalApp
 {
-    public partial class RemoveEmployeeForm : BaseForm
+    public partial class RemoveEmployeeForm : Form
     {
         public RemoveEmployeeForm()
         {
+            this.MaximizeBox = false;
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 
