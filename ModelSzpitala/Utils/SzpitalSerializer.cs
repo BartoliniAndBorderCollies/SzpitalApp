@@ -5,15 +5,23 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
+
 namespace ModelSzpitala.Utils
 {
     public static class SzpitalSerializer
     {
 
-        private static readonly string FilePath = "szpital.json";
+        private static readonly string FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"SzpitalApp");
+
+        private static readonly string FilePath = Path.Combine(FolderPath, "szpital.json");
 
         public static void Zapisz(Szpital szpital)
         {
+
+            if (!Directory.Exists(FolderPath))
+            {
+                Directory.CreateDirectory(FolderPath);
+            }
 
             var niceFormat = new JsonSerializerOptions
             {

@@ -1,4 +1,5 @@
 ﻿using ModelSzpitala;
+using ModelSzpitala.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,25 @@ namespace SzpitalApp
         {
             InitializeComponent();
         }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            try
+            {
+                SzpitalSerializer.Zapisz(Szpital.SzpitalInstance);
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show("Błąd zapisu danych: \n" + exception.Message,
+                    "Błąd",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+
+            base.OnFormClosing(e);
+        }
+
 
         private void panelContent_Paint(object sender, PaintEventArgs e)
         {
@@ -54,7 +74,7 @@ namespace SzpitalApp
                 MessageBoxIcon.Question
                 );
 
-            if( wyjscie == DialogResult.Yes )
+            if (wyjscie == DialogResult.Yes)
             {
                 Application.Exit();
             }
