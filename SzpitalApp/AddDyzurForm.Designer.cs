@@ -38,6 +38,8 @@
             // 
             mthCalendar.Location = new Point(132, 59);
             mthCalendar.Name = "mthCalendar";
+            mthCalendar.ShowToday = false;
+            mthCalendar.ShowTodayCircle = false;
             mthCalendar.TabIndex = 0;
             // 
             // lblText
