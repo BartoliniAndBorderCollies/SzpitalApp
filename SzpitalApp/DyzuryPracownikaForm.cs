@@ -93,8 +93,15 @@ namespace SzpitalApp
                 MessageBox.Show("Zaznacz dyżur do usunięcia!", "Informacja");
                 return;
             }
-            else
+
+            var wynik = MessageBox.Show("Czy na pewno chcesz usunąć zaznaczony dyżur?", 
+                "Potwierdzenie",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if(wynik == DialogResult.Yes)
             {
+
                 if (_pracownik is Lekarz lekarz)
                 {
                     lekarz.UsunDyzur(zaznaczonyDyzur);
