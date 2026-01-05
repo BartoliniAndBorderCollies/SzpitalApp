@@ -97,6 +97,12 @@ namespace ModelSzpitala
 
             return liczbaDyzurowDanyMiesiac;
         }
+
+        public void UsunDyzur(Dyzur dyzur)
+        {
+            _listaDyzurow.Remove(dyzur);
+
+        }
     }
 }
 

@@ -82,6 +82,7 @@
             btnUsun.TabIndex = 3;
             btnUsun.Text = "Usuń";
             btnUsun.UseVisualStyleBackColor = false;
+            btnUsun.Click += btnUsun_Click;
             // 
             // btnZamknij
             // 

@@ -84,5 +84,31 @@ namespace SzpitalApp
         {
             this.Close();
         }
+
+        private void btnUsun_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridViewDyzury.CurrentRow?.DataBoundItem is not Dyzur zaznaczonyDyzur)
+            {
+                MessageBox.Show("Zaznacz dyżur do usunięcia!", "Informacja");
+                return;
+            }
+            else
+            {
+                if (_pracownik is Lekarz lekarz)
+                {
+                    lekarz.UsunDyzur(zaznaczonyDyzur);
+                    MessageBox.Show("Dyżur został usunięty!", "Informacja");
+                    OdswiezListeDyzurow();
+
+                }
+                else if (_pracownik is Pielegniarka pielegniarka)
+                {
+                    pielegniarka.UsunDyzur(zaznaczonyDyzur);
+                    MessageBox.Show("Dyżur został usunięty!", "Informacja");
+                    OdswiezListeDyzurow();
+                }
+            }
+        }
     }
 }

@@ -57,7 +57,7 @@
             // 
             // btnEdytuj
             // 
-            btnEdytuj.BackColor = SystemColors.HotTrack;
+            btnEdytuj.BackColor = SystemColors.GrayText;
             btnEdytuj.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnEdytuj.ForeColor = SystemColors.ButtonHighlight;
             btnEdytuj.Location = new Point(524, 48);
