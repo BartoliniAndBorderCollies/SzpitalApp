@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ModelSzpitala
 {
     public class Pielegniarka : Pracownik
     {
-
+        [JsonInclude]
         private readonly List<Dyzur> _listaDyzurow = new List<Dyzur>(); //tworze listę raz, a potem moge ją modyfikować, ale nie nadpisywać
 
+        [JsonConstructor]
+        protected Pielegniarka()
+        {
+            // tylko dla deserializacji
+        }
 
         public Pielegniarka(string imie, string nazwisko, string pesel, string nazwaUzytkownika, string haslo, List<Dyzur> listaDyzurow) : base(imie, nazwisko, pesel, nazwaUzytkownika, haslo)
         {

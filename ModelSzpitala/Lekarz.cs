@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ModelSzpitala
@@ -10,7 +11,15 @@ namespace ModelSzpitala
     {
         private Specjalnosc _specjalnosc;
         private int _numerPWZ;
+        [JsonInclude]
         private readonly List<Dyzur> _listaDyzurow = new List<Dyzur>(); //tworze liste raz, a potem mogę ją modyfikować, ale nie nadpisywac
+
+        [JsonConstructor]
+        protected Lekarz()
+        {
+            // tylko dla deserializacji
+        }
+
 
         public Lekarz(string imie, string nazwisko, string pesel, string nazwaUzytkownika, string haslo, Specjalnosc specjalnosc, int numerPWZ, List<Dyzur> listaDyzurow) : base(imie, nazwisko, pesel, nazwaUzytkownika, haslo)
         {
