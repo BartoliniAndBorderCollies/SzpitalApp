@@ -53,11 +53,18 @@ namespace SzpitalApp
 
             if (_pracownik is Lekarz lekarz)
             {
-                _bindingDyzurow = new BindingList<Dyzur>(lekarz.PokazListeDyzurow);
+                _bindingDyzurow = new BindingList<Dyzur>();
+                foreach (var d in lekarz.PokazListeDyzurow)
+                    _bindingDyzurow.Add(d);
+
             }
             else if (_pracownik is Pielegniarka pielegniarka)
             {
-                _bindingDyzurow = new BindingList<Dyzur>(pielegniarka.PokazListeDyzurow);
+  
+                _bindingDyzurow = new BindingList<Dyzur>();
+                foreach (var d in pielegniarka.PokazListeDyzurow)
+                    _bindingDyzurow.Add(d);
+
             }
 
             dataGridViewDyzury.DataSource = _bindingDyzurow;
@@ -76,9 +83,17 @@ namespace SzpitalApp
 
         private void OdswiezListeDyzurow()
         {
-            _bindingDyzurow.ResetBindings();
+            _bindingDyzurow.Clear();
 
+            if (_pracownik is Lekarz l)
+                foreach (var d in l.PokazListeDyzurow)
+                    _bindingDyzurow.Add(d);
+
+            if (_pracownik is Pielegniarka p)
+                foreach (var d in p.PokazListeDyzurow)
+                    _bindingDyzurow.Add(d);
         }
+
 
         private void btnZamknij_Click(object sender, EventArgs e)
         {
