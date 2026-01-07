@@ -34,17 +34,61 @@ namespace ModelSzpitala
             {
                 return _listaPracownikow;
             }
-        }
 
-        // prywatny konstruktor - nikt poza klasą Szpital nie może wywołać new Szpital()
-        private Szpital()
-        {       //administrator startowy
-            if (_listaPracownikow.Count == 0)
+            set
             {
-                Administrator administrator = new Administrator("admin", "admin", "00000000001", "admin", "admin");
-                _listaPracownikow.Add(administrator);
+                _listaPracownikow.Clear();
+                if (value != null)
+                    _listaPracownikow.AddRange(value);
             }
         }
+
+        public Szpital()
+        {
+            // PUSTY – tylko dla deserializacji
+        }
+
+
+
+        //Dla deserializacji
+
+        private void DodajAdministratoraStartowego()
+        {
+            if (_listaPracownikow.Count == 0)
+            {
+                _listaPracownikow.Add(
+                    new Administrator("admin", "admin", "00000000001", "admin", "admin"));
+            }
+        }
+
+
+        public static void UstawInstancje(Szpital szpital)
+        {
+            _szpital = szpital;
+        }
+
+
+        public static void InicjalizujDomyslnie()
+        {
+            _szpital = new Szpital();
+            _szpital.DodajAdministratoraStartowego();
+        }
+
+
+        public void OdbudujOstatnieId()
+        {
+            if (_listaPracownikow.Count == 0)
+            {
+                _ostatnieId = 1;
+            }
+            else
+            {
+                _ostatnieId = _listaPracownikow.Max(p => p.Id) + 1;
+            }
+        }
+
+        //--------------------------------------------------------------------------------------------------
+
 
         public void DodajPracownika(Pracownik pracownik)
         {
