@@ -12,7 +12,7 @@ namespace ModelSzpitala
         private Specjalnosc _specjalnosc;
         private int _numerPWZ;
         [JsonInclude]
-        private readonly List<Dyzur> _listaDyzurow = new List<Dyzur>(); //tworze liste raz, a potem mogę ją modyfikować, ale nie nadpisywac
+        private List<Dyzur> _listaDyzurow = new List<Dyzur>();
 
         [JsonConstructor]
         protected Lekarz()

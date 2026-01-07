@@ -10,7 +10,7 @@ namespace ModelSzpitala
     public class Pielegniarka : Pracownik
     {
         [JsonInclude]
-        private readonly List<Dyzur> _listaDyzurow = new List<Dyzur>(); //tworze listę raz, a potem moge ją modyfikować, ale nie nadpisywać
+        private List<Dyzur> _listaDyzurow = new List<Dyzur>();
 
         [JsonConstructor]
         protected Pielegniarka()
