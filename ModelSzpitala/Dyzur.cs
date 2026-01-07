@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ModelSzpitala
 {
     public class Dyzur
     {
+        [JsonIgnore]
         public Pracownik Pracownik {  get; set; }
         public DateTime DataRozpoczecia { get; set; }
         public DateTime DataZakonczenia { get; set; }
