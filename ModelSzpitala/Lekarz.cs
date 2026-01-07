@@ -48,6 +48,7 @@ namespace ModelSzpitala
             }
         }
 
+        [JsonIgnore]
         public List<Dyzur> PokazListeDyzurow
         {
             get
