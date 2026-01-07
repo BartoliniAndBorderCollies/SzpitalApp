@@ -1,3 +1,6 @@
+using ModelSzpitala;
+using ModelSzpitala.Utils;
+
 namespace SzpitalApp
 {
     internal static class Program
@@ -11,7 +14,23 @@ namespace SzpitalApp
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new LoginForm());
+
+
+            Szpital? wczytanySzpital = SzpitalSerializer.Wczytaj();
+
+            if(wczytanySzpital != null)
+            {
+                wczytanySzpital.OdbudujOstatnieId();
+                Szpital.UstawInstancje(wczytanySzpital);
+            }
+            else
+            {
+                Szpital.InicjalizujDomyslnie();
+            }
+
+
+
+                Application.Run(new LoginForm());
         }
     }
 }
