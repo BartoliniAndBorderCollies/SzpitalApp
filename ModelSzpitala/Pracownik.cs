@@ -1,7 +1,12 @@
 ﻿using ModelSzpitala.Security;
+using System.Text.Json.Serialization;
 
 namespace ModelSzpitala
 {
+    [JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
+    [JsonDerivedType(typeof(Lekarz), "lekarz")]
+    [JsonDerivedType(typeof(Pielegniarka), "pielegniarka")]
+    [JsonDerivedType(typeof(Administrator), "administrator")]
     public abstract class Pracownik
     {
         public int Id { get; set; }
@@ -9,8 +14,14 @@ namespace ModelSzpitala
         public string Nazwisko { get; set; }
         public string Pesel { get; set; } //bo 11 znakowy (A int jest 10) poza tym moze zaczynac sie od 0 a int obcina zera
         public string NazwaUzytkownika { get; set; }
-        public string HashHasla { get; private set; }
-        public string Salt {  get; private set; }
+        public string HashHasla { get; set; }
+        public string Salt {  get; set; }
+
+        protected Pracownik()
+        {
+            // tylko dla deserializacji
+        }
+
 
         public Pracownik(string imie, string nazwisko, string pesel, string nazwaUzytkownika, string haslo)
         {
