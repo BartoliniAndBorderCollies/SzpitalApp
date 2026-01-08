@@ -43,7 +43,7 @@ namespace SzpitalApp
             }
             else
             {
-                MainPanelForm mainPanel = new MainPanelForm();
+                MainPanelForm mainPanel = new MainPanelForm(pracownik);
                 mainPanel.Show();
 
                 this.Hide();

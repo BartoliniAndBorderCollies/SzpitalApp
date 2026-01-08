@@ -28,32 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panelContent = new Panel();
+            GeneralPanel = new Panel();
             btnExitProgram = new Button();
+            panelPersonel = new Panel();
+            btnPlanDyzurow = new Button();
+            btnListaPersonelu = new Button();
+            adminPanel = new Panel();
             btnUsunPracownika = new Button();
-            btnDodajPracownika = new Button();
             btnListaPracownikow = new Button();
+            btnDodajPracownika = new Button();
             panelBackground = new Panel();
             blackPanel = new Panel();
-            panelContent.SuspendLayout();
+            GeneralPanel.SuspendLayout();
+            panelPersonel.SuspendLayout();
+            adminPanel.SuspendLayout();
             blackPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // panelContent
+            // GeneralPanel
             // 
-            panelContent.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelContent.BackColor = Color.WhiteSmoke;
-            panelContent.BackgroundImageLayout = ImageLayout.None;
-            panelContent.Controls.Add(btnExitProgram);
-            panelContent.Controls.Add(btnUsunPracownika);
-            panelContent.Controls.Add(btnDodajPracownika);
-            panelContent.Controls.Add(btnListaPracownikow);
-            panelContent.Dock = DockStyle.Left;
-            panelContent.Location = new Point(50, 50);
-            panelContent.Name = "panelContent";
-            panelContent.Size = new Size(300, 1048);
-            panelContent.TabIndex = 0;
-            panelContent.Paint += panelContent_Paint;
+            GeneralPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            GeneralPanel.BackColor = Color.WhiteSmoke;
+            GeneralPanel.BackgroundImageLayout = ImageLayout.None;
+            GeneralPanel.Controls.Add(btnExitProgram);
+            GeneralPanel.Controls.Add(panelPersonel);
+            GeneralPanel.Controls.Add(adminPanel);
+            GeneralPanel.Dock = DockStyle.Left;
+            GeneralPanel.Location = new Point(50, 50);
+            GeneralPanel.Name = "GeneralPanel";
+            GeneralPanel.Size = new Size(300, 1048);
+            GeneralPanel.TabIndex = 0;
+            GeneralPanel.Paint += panelContent_Paint;
             // 
             // btnExitProgram
             // 
@@ -69,31 +74,63 @@
             btnExitProgram.UseVisualStyleBackColor = false;
             btnExitProgram.Click += btnExitProgram_Click;
             // 
+            // panelPersonel
+            // 
+            panelPersonel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelPersonel.Controls.Add(btnPlanDyzurow);
+            panelPersonel.Controls.Add(btnListaPersonelu);
+            panelPersonel.Location = new Point(0, 0);
+            panelPersonel.Name = "panelPersonel";
+            panelPersonel.Size = new Size(269, 583);
+            panelPersonel.TabIndex = 0;
+            // 
+            // btnPlanDyzurow
+            // 
+            btnPlanDyzurow.BackColor = SystemColors.GrayText;
+            btnPlanDyzurow.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnPlanDyzurow.ForeColor = SystemColors.ButtonHighlight;
+            btnPlanDyzurow.Location = new Point(9, 382);
+            btnPlanDyzurow.Name = "btnPlanDyzurow";
+            btnPlanDyzurow.Size = new Size(257, 181);
+            btnPlanDyzurow.TabIndex = 6;
+            btnPlanDyzurow.Text = "Pokaż plan dyżurów danej osoby";
+            btnPlanDyzurow.UseVisualStyleBackColor = false;
+            // 
+            // btnListaPersonelu
+            // 
+            btnListaPersonelu.BackColor = SystemColors.GrayText;
+            btnListaPersonelu.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnListaPersonelu.ForeColor = SystemColors.ButtonHighlight;
+            btnListaPersonelu.Location = new Point(9, 83);
+            btnListaPersonelu.Name = "btnListaPersonelu";
+            btnListaPersonelu.Size = new Size(257, 181);
+            btnListaPersonelu.TabIndex = 5;
+            btnListaPersonelu.Text = "Wyświetl listę lekarzy i pielęgniarek";
+            btnListaPersonelu.UseVisualStyleBackColor = false;
+            // 
+            // adminPanel
+            // 
+            adminPanel.BackColor = Color.WhiteSmoke;
+            adminPanel.Controls.Add(btnUsunPracownika);
+            adminPanel.Controls.Add(btnListaPracownikow);
+            adminPanel.Controls.Add(btnDodajPracownika);
+            adminPanel.Location = new Point(0, 17);
+            adminPanel.Name = "adminPanel";
+            adminPanel.Size = new Size(300, 743);
+            adminPanel.TabIndex = 4;
+            // 
             // btnUsunPracownika
             // 
             btnUsunPracownika.BackColor = SystemColors.GrayText;
             btnUsunPracownika.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnUsunPracownika.ForeColor = SystemColors.ButtonHighlight;
-            btnUsunPracownika.Location = new Point(22, 312);
+            btnUsunPracownika.Location = new Point(23, 260);
             btnUsunPracownika.Name = "btnUsunPracownika";
-            btnUsunPracownika.Size = new Size(257, 160);
+            btnUsunPracownika.Size = new Size(257, 181);
             btnUsunPracownika.TabIndex = 3;
             btnUsunPracownika.Text = "Usuń pracownika";
             btnUsunPracownika.UseVisualStyleBackColor = false;
             btnUsunPracownika.Click += btnUsunPracownika_Click;
-            // 
-            // btnDodajPracownika
-            // 
-            btnDodajPracownika.BackColor = SystemColors.GrayText;
-            btnDodajPracownika.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            btnDodajPracownika.ForeColor = SystemColors.ButtonHighlight;
-            btnDodajPracownika.Location = new Point(22, 75);
-            btnDodajPracownika.Name = "btnDodajPracownika";
-            btnDodajPracownika.Size = new Size(257, 181);
-            btnDodajPracownika.TabIndex = 1;
-            btnDodajPracownika.Text = "Dodaj pracownika";
-            btnDodajPracownika.UseVisualStyleBackColor = false;
-            btnDodajPracownika.Click += btnDodajPracownika_Click;
             // 
             // btnListaPracownikow
             // 
@@ -101,13 +138,26 @@
             btnListaPracownikow.BackColor = SystemColors.GrayText;
             btnListaPracownikow.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnListaPracownikow.ForeColor = SystemColors.ButtonHighlight;
-            btnListaPracownikow.Location = new Point(22, 538);
+            btnListaPracownikow.Location = new Point(23, 482);
             btnListaPracownikow.Name = "btnListaPracownikow";
-            btnListaPracownikow.Size = new Size(257, 170);
+            btnListaPracownikow.Size = new Size(257, 181);
             btnListaPracownikow.TabIndex = 0;
             btnListaPracownikow.Text = "Lista pracowników   i ich edycja";
             btnListaPracownikow.UseVisualStyleBackColor = false;
             btnListaPracownikow.Click += btnListaPracownikow_Click;
+            // 
+            // btnDodajPracownika
+            // 
+            btnDodajPracownika.BackColor = SystemColors.GrayText;
+            btnDodajPracownika.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnDodajPracownika.ForeColor = SystemColors.ButtonHighlight;
+            btnDodajPracownika.Location = new Point(23, 30);
+            btnDodajPracownika.Name = "btnDodajPracownika";
+            btnDodajPracownika.Size = new Size(257, 181);
+            btnDodajPracownika.TabIndex = 1;
+            btnDodajPracownika.Text = "Dodaj pracownika";
+            btnDodajPracownika.UseVisualStyleBackColor = false;
+            btnDodajPracownika.Click += btnDodajPracownika_Click;
             // 
             // panelBackground
             // 
@@ -125,7 +175,7 @@
             blackPanel.BackColor = SystemColors.ActiveCaptionText;
             blackPanel.BackgroundImageLayout = ImageLayout.None;
             blackPanel.Controls.Add(panelBackground);
-            blackPanel.Controls.Add(panelContent);
+            blackPanel.Controls.Add(GeneralPanel);
             blackPanel.Dock = DockStyle.Fill;
             blackPanel.Location = new Point(0, 0);
             blackPanel.Name = "blackPanel";
@@ -142,7 +192,9 @@
             MaximumSize = new Size(2304, 1219);
             Name = "MainPanelForm";
             Text = "Panel główny";
-            panelContent.ResumeLayout(false);
+            GeneralPanel.ResumeLayout(false);
+            panelPersonel.ResumeLayout(false);
+            adminPanel.ResumeLayout(false);
             blackPanel.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -150,12 +202,16 @@
 
         #endregion
 
-        private Panel panelContent;
+        private Panel GeneralPanel;
         private Button btnUsunPracownika;
         private Button btnDodajPracownika;
         private Button btnListaPracownikow;
         private Panel panelBackground;
         private Button btnExitProgram;
         private Panel blackPanel;
+        private Button btnListaPersonelu;
+        private Panel panelPersonel;
+        private Button btnPlanDyzurow;
+        private Panel adminPanel;
     }
 }

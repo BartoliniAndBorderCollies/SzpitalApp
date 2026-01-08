@@ -14,10 +14,33 @@ namespace SzpitalApp
 {
     public partial class MainPanelForm : BaseForm
     {
-        public MainPanelForm()
+        private Pracownik _zalogowany;
+
+        public MainPanelForm(Pracownik zalogowany)
         {
             InitializeComponent();
+            _zalogowany = zalogowany;
+
+            SkonfigurujWidok();
         }
+
+        private void SkonfigurujWidok()
+        {
+            adminPanel.Visible = false;
+            panelPersonel.Visible = false;
+
+            if (_zalogowany is Administrator)
+            {
+                adminPanel.Dock = DockStyle.Fill;
+                adminPanel.Visible = true;
+            }
+            else
+            {
+                panelPersonel.Dock = DockStyle.Fill;
+                panelPersonel.Visible = true;
+            }
+        }
+
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
