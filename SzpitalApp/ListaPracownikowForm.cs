@@ -130,11 +130,11 @@ namespace SzpitalApp
             }
             else if (column == "Specjalnosc")
             {
-                e.Value = pracownik is Lekarz lekarz ? lekarz.PokazSpecjalnosc.ToString() : "";
+                e.Value = pracownik is Lekarz lekarz ? lekarz.Specjalnosc.ToString() : "";
             }
             else if (column == "PWZ")
             {
-                e.Value = pracownik is Lekarz lekarz ? lekarz.PokazPWZ.ToString() : "";
+                e.Value = pracownik is Lekarz lekarz ? lekarz.NumerPWZ.ToString() : "";
             }
         }
 

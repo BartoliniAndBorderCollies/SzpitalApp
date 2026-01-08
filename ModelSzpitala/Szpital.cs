@@ -175,13 +175,13 @@ namespace ModelSzpitala
         internal bool CzyDyzurMaLekarzTakaSamaSpecjalizacja(Lekarz lekarz, Dyzur dyzur)
         {
             DateTime dataDyzuru = dyzur.DataRozpoczecia.Date;
-            Specjalnosc specjalnoscLekarza = lekarz.PokazSpecjalnosc;
+            Specjalnosc specjalnoscLekarza = lekarz.Specjalnosc;
 
             foreach (Pracownik pracownik in _listaPracownikow)
             {
 
                 if (pracownik is Lekarz lekarzZListyDyzurow &&
-                    lekarzZListyDyzurow.PokazSpecjalnosc == specjalnoscLekarza &&
+                    lekarzZListyDyzurow.Specjalnosc == specjalnoscLekarza &&
                     lekarzZListyDyzurow != lekarz)
                 {
                     foreach (Dyzur dyzuryLekarzaZListy in lekarzZListyDyzurow.PokazListeDyzurow)
