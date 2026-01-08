@@ -40,14 +40,22 @@ namespace SzpitalApp
             {
                 DataPropertyName = "DataRozpoczecia",
                 HeaderText = "Data rozpoczęcia",
-                Name = "DataRozpoczecia"
+                Name = "DataRozpoczecia",
+                DefaultCellStyle = new DataGridViewCellStyle
+                {
+                    Format = "dd.MM.yyyy"
+                }
             });
 
             dataGridViewDyzury.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "DataZakonczenia",
                 HeaderText = "Data zakończenia",
-                Name = "DataZakonczenia"
+                Name = "DataZakonczenia",
+                DefaultCellStyle = new DataGridViewCellStyle
+                {
+                    Format = "dd.MM.yyyy"
+                }
             });
 
 
