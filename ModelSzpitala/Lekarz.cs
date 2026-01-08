@@ -9,8 +9,10 @@ namespace ModelSzpitala
 {
     public class Lekarz : Pracownik
     {
-        private Specjalnosc _specjalnosc;
-        private int _numerPWZ;
+        [JsonInclude]
+        public Specjalnosc Specjalnosc { get; private set; }
+        [JsonInclude]
+        public int NumerPWZ { get; private set; }
         [JsonInclude]
         private List<Dyzur> _listaDyzurow = new List<Dyzur>();
 
@@ -23,28 +25,12 @@ namespace ModelSzpitala
 
         public Lekarz(string imie, string nazwisko, string pesel, string nazwaUzytkownika, string haslo, Specjalnosc specjalnosc, int numerPWZ, List<Dyzur> listaDyzurow) : base(imie, nazwisko, pesel, nazwaUzytkownika, haslo)
         {
-            this._specjalnosc = specjalnosc;
-            this._numerPWZ = numerPWZ;
+            this.Specjalnosc = specjalnosc;
+            this.NumerPWZ = numerPWZ;
 
             if (listaDyzurow != null)
             {
                 _listaDyzurow.AddRange(listaDyzurow);
-            }
-        }
-
-        public int PokazPWZ
-        {
-            get
-            {
-                return _numerPWZ;
-            }
-        }
-
-        public Specjalnosc PokazSpecjalnosc
-        {
-            get
-            {
-                return _specjalnosc;
             }
         }
 
@@ -59,7 +45,7 @@ namespace ModelSzpitala
 
         public override string ToString()
         {
-            return base.ToString() + $"\nSpecjalność: {_specjalnosc}, Numer PWZ: {_numerPWZ}";
+            return base.ToString() + $"\nSpecjalność: {Specjalnosc}, Numer PWZ: {NumerPWZ}";
         }
 
 
