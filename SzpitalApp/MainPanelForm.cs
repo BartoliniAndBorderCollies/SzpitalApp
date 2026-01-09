@@ -86,7 +86,7 @@ namespace SzpitalApp
 
         private void btnListaPracownikow_Click(object sender, EventArgs e)
         {
-            ListaPracownikowForm listaPracownikowForm = new ListaPracownikowForm();
+            ListaPracownikowForm listaPracownikowForm = new ListaPracownikowForm(_zalogowany);
             listaPracownikowForm.ShowDialog();
 
 
@@ -107,7 +107,7 @@ namespace SzpitalApp
 
         private void btnPlanDyzurow_Click(object sender, EventArgs e)
         {
-            WskazDyzurOsoby wskazDyzurOsoby = new WskazDyzurOsoby();
+            WskazDyzurOsoby wskazDyzurOsoby = new WskazDyzurOsoby(_zalogowany);
             wskazDyzurOsoby.ShowDialog();
         }
 

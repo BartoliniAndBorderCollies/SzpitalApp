@@ -14,17 +14,23 @@ namespace SzpitalApp
     public partial class DyzuryPracownikaForm : Form
     {
         private Pracownik _pracownik;
+        private Pracownik _zalogowany;
         private BindingList<Dyzur> _bindingDyzurow;
 
 
-        public DyzuryPracownikaForm(Pracownik pracownik)
+        public DyzuryPracownikaForm(Pracownik zalogowany, Pracownik pracownik)
         {
             InitializeComponent();
+
             _pracownik = pracownik;
-            this.Load += DyzuryPracownikaForm_Load;
+            _zalogowany = zalogowany;
+
             StartPosition = FormStartPosition.CenterScreen;
             this.MaximizeBox = false;
 
+            this.Load += DyzuryPracownikaForm_Load;
+
+            SkonfigurujUprawnienia();
         }
 
         private void DyzuryPracownikaForm_Load(object sender, EventArgs e)
@@ -68,7 +74,7 @@ namespace SzpitalApp
             }
             else if (_pracownik is Pielegniarka pielegniarka)
             {
-  
+
                 _bindingDyzurow = new BindingList<Dyzur>();
                 foreach (var d in pielegniarka.PokazListeDyzurow)
                     _bindingDyzurow.Add(d);
@@ -117,12 +123,12 @@ namespace SzpitalApp
                 return;
             }
 
-            var wynik = MessageBox.Show("Czy na pewno chcesz usunąć zaznaczony dyżur?", 
+            var wynik = MessageBox.Show("Czy na pewno chcesz usunąć zaznaczony dyżur?",
                 "Potwierdzenie",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
-            if(wynik == DialogResult.Yes)
+            if (wynik == DialogResult.Yes)
             {
 
                 if (_pracownik is Lekarz lekarz)
@@ -140,5 +146,28 @@ namespace SzpitalApp
                 }
             }
         }
+
+        private void SkonfigurujUprawnienia()
+        {
+
+            btnDodaj.Visible = false;
+            btnUsun.Visible = false;
+
+            //admin może dodawać/usuwać
+            if (_zalogowany is Administrator)
+            {
+                btnDodaj.Visible = true;
+                btnUsun.Visible = true;
+                return;
+            }
+
+            // lekarz/pielęgniarka – tylko własne dyżury
+            if (_zalogowany == _pracownik)
+            {
+                btnDodaj.Visible = true;
+                btnUsun.Visible = true;
+            }
+        }
+
     }
 }

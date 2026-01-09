@@ -13,8 +13,13 @@ namespace SzpitalApp
 {
     public partial class WskazDyzurOsoby : Form
     {
-        public WskazDyzurOsoby()
+
+        private Pracownik _zalogowany;
+
+        public WskazDyzurOsoby(Pracownik zalogowany)
         {
+            _zalogowany = zalogowany;
+
             this.MaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
@@ -47,7 +52,7 @@ namespace SzpitalApp
                 return;
             }
 
-            DyzuryPracownikaForm dyzuryPracownikaForm = new DyzuryPracownikaForm(pracownik);
+            DyzuryPracownikaForm dyzuryPracownikaForm = new DyzuryPracownikaForm(_zalogowany, pracownik);
             dyzuryPracownikaForm.ShowDialog();
 
         }

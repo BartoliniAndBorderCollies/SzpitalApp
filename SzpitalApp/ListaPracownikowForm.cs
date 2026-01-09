@@ -14,12 +14,15 @@ namespace SzpitalApp
     public partial class ListaPracownikowForm : BaseForm
     {
         private bool trybEdycji = false;
+        private Pracownik _zalogowany;
 
-        public ListaPracownikowForm()
+
+        public ListaPracownikowForm(Pracownik zalogowany)
         {
             InitializeComponent();
             dataGridViewPracownicy.CellFormatting += dataGridViewPracownicy_CellFormatting;
             dataGridViewPracownicy.CellContentClick += dataGridViewPracownicy_CellContentClick;
+            _zalogowany = zalogowany;
         }
 
         private void ListaPracownikowForm_Load(object sender, EventArgs e)
@@ -146,7 +149,7 @@ namespace SzpitalApp
             {
                 var pracownik = dataGridViewPracownicy.Rows[e.RowIndex].DataBoundItem as Pracownik;
 
-                var form = new DyzuryPracownikaForm(pracownik);
+                var form = new DyzuryPracownikaForm(_zalogowany, pracownik);
                 form.ShowDialog();
             }
         }
