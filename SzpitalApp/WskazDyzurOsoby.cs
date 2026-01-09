@@ -15,41 +15,48 @@ namespace SzpitalApp
     {
 
         private Pracownik _zalogowany;
+        private List<Pracownik> _listaPracownikow;
 
         public WskazDyzurOsoby(Pracownik zalogowany)
         {
+            InitializeComponent();
+
             _zalogowany = zalogowany;
 
-            this.MaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
-            InitializeComponent();
+            this.MaximizeBox = false;
+
+            ZaladujPracownikow();
         }
 
-        private void txtBx_TextChanged(object sender, EventArgs e)
+        private void ZaladujPracownikow()
         {
-            btnZobacz.Enabled =
-                !string.IsNullOrWhiteSpace(txtBxImie.Text) &&
-                !string.IsNullOrWhiteSpace(txtBxNazwisko.Text);
-        }
+            _listaPracownikow = Szpital.SzpitalInstance.DostepDoListyPracownikow
+                .Where(pracownik => pracownik is Lekarz || pracownik is Pielegniarka)
+                .OrderBy(pracownik => pracownik.Nazwisko)
+                .ThenBy(pracownik => pracownik.Imie)
+                .ToList();
 
+
+            comboBoxPracownik.DataSource = _listaPracownikow;
+            comboBoxPracownik.DisplayMember = "OpisDoComboBoxu";
+            comboBoxPracownik.SelectedIndex = -1; //na start nic nie wybrane
+
+            btnZobacz.Enabled = false;
+        }
 
 
         private void btnZobacz_Click_1(object sender, EventArgs e)
         {
 
-            string imie = txtBxImie.Text.Trim();
-            string nazwisko = txtBxNazwisko.Text.Trim();
-
-            Pracownik? pracownik = Szpital.SzpitalInstance.SzukajPracownika(imie, nazwisko);
-
-            if (pracownik == null)
+            if (comboBoxPracownik.SelectedItem is not Pracownik pracownik)
             {
-                MessageBox.Show(
-                    "Nie znaleziono pracownika o podanych danych.",
-                    "Brak wyników",
+                MessageBox.Show("Wybierz pracownika!",
+                    "Informacja",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 return;
+
             }
 
             DyzuryPracownikaForm dyzuryPracownikaForm = new DyzuryPracownikaForm(_zalogowany, pracownik);
@@ -61,5 +68,11 @@ namespace SzpitalApp
         {
             this.Close();
         }
+
+        private void comboBoxPracownik_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnZobacz.Enabled = comboBoxPracownik.SelectedItem is Pracownik;
+        }
+
     }
 }

@@ -210,19 +210,5 @@ namespace ModelSzpitala
             }
             return null;
         }
-
-        public Pracownik? SzukajPracownika(string imie, string nazwisko)
-        {
-
-            foreach (Pracownik pracownik in _listaPracownikow)
-            {
-                if (pracownik.Imie == imie && pracownik.Nazwisko == nazwisko)
-                {
-
-                    return pracownik;
-                }
-            }
-            return null;
-        }
     }
 }

@@ -17,6 +17,16 @@ namespace ModelSzpitala
         public string HashHasla { get; set; }
         public string Salt {  get; set; }
 
+        [JsonIgnore]
+        public virtual string OpisDoComboBoxu
+        {
+            get
+            {
+                return $"{Imie} {Nazwisko} (PESEL: {Pesel})";
+            }
+        }
+
+
         protected Pracownik()
         {
             // tylko dla deserializacji

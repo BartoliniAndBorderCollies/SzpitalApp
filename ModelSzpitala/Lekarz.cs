@@ -16,6 +16,16 @@ namespace ModelSzpitala
         [JsonInclude]
         private List<Dyzur> _listaDyzurow = new List<Dyzur>();
 
+        [JsonIgnore]
+        public override string OpisDoComboBoxu
+        {
+            get
+            {
+                return $"{Imie} {Nazwisko} – Lekarz ({Specjalnosc}, PWZ: {NumerPWZ})";
+            }
+        }
+
+
         [JsonConstructor]
         protected Lekarz()
         {

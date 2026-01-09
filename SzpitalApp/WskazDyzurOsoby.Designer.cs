@@ -30,11 +30,9 @@
         {
             label1 = new Label();
             label2 = new Label();
-            txtBxNazwisko = new TextBox();
             btnZobacz = new Button();
-            lblImie = new Label();
-            txtBxImie = new TextBox();
             button1 = new Button();
+            comboBoxPracownik = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -51,17 +49,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(262, 91);
             label2.Name = "label2";
-            label2.Size = new Size(180, 32);
+            label2.Size = new Size(227, 32);
             label2.TabIndex = 1;
-            label2.Text = "Podaj nazwisko:";
-            // 
-            // txtBxNazwisko
-            // 
-            txtBxNazwisko.Location = new Point(212, 140);
-            txtBxNazwisko.Name = "txtBxNazwisko";
-            txtBxNazwisko.PlaceholderText = "Nazwisko";
-            txtBxNazwisko.Size = new Size(330, 39);
-            txtBxNazwisko.TabIndex = 2;
+            label2.Text = "Wybierz pracownika";
             // 
             // btnZobacz
             // 
@@ -76,23 +66,6 @@
             btnZobacz.UseVisualStyleBackColor = false;
             btnZobacz.Click += btnZobacz_Click_1;
             // 
-            // lblImie
-            // 
-            lblImie.AutoSize = true;
-            lblImie.Location = new Point(292, 212);
-            lblImie.Name = "lblImie";
-            lblImie.Size = new Size(130, 32);
-            lblImie.TabIndex = 4;
-            lblImie.Text = "Podaj imię:";
-            // 
-            // txtBxImie
-            // 
-            txtBxImie.Location = new Point(252, 274);
-            txtBxImie.Name = "txtBxImie";
-            txtBxImie.PlaceholderText = "Imię";
-            txtBxImie.Size = new Size(237, 39);
-            txtBxImie.TabIndex = 5;
-            // 
             // button1
             // 
             button1.Location = new Point(420, 359);
@@ -103,20 +76,28 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // comboBoxPracownik
+            // 
+            comboBoxPracownik.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxPracownik.FormattingEnabled = true;
+            comboBoxPracownik.Location = new Point(87, 182);
+            comboBoxPracownik.Name = "comboBoxPracownik";
+            comboBoxPracownik.Size = new Size(611, 40);
+            comboBoxPracownik.TabIndex = 7;
+            comboBoxPracownik.SelectedIndexChanged += comboBoxPracownik_SelectedIndexChanged;
+            // 
             // WskazDyzurOsoby
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(comboBoxPracownik);
             Controls.Add(button1);
-            Controls.Add(txtBxImie);
-            Controls.Add(lblImie);
             Controls.Add(btnZobacz);
-            Controls.Add(txtBxNazwisko);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "WskazDyzurOsoby";
-            Text = "WskazDyzurOsoby";
+            Text = "Dyzury osoby";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -125,10 +106,8 @@
 
         private Label label1;
         private Label label2;
-        private TextBox txtBxNazwisko;
         private Button btnZobacz;
-        private Label lblImie;
-        private TextBox txtBxImie;
         private Button button1;
+        private ComboBox comboBoxPracownik;
     }
 }
