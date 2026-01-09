@@ -1,6 +1,6 @@
 ﻿namespace SzpitalApp
 {
-    partial class AddDyzurForm
+    partial class DodajDyzurForm
     {
         /// <summary>
         /// Required designer variable.

@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace SzpitalApp
 {
-    public partial class AddDyzurForm : Form
+    public partial class DodajDyzurForm : Form
     {
         private Pracownik _pracownik;
 
-        public AddDyzurForm(Pracownik pracownik)
+        public DodajDyzurForm(Pracownik pracownik)
         {
             _pracownik = pracownik;
             InitializeComponent();

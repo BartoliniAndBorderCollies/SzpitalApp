@@ -14,9 +14,9 @@ using System.Windows.Forms.VisualStyles;
 
 namespace SzpitalApp
 {
-    public partial class AddEmployeeForm : BaseForm
+    public partial class DodajPracownikaForm : BaseForm
     {
-        public AddEmployeeForm()
+        public DodajPracownikaForm()
         {
             InitializeComponent();
 

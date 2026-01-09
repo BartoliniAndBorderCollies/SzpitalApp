@@ -94,14 +94,14 @@ namespace SzpitalApp
 
         private void btnDodajPracownika_Click(object sender, EventArgs e)
         {
-            AddEmployeeForm addEmployeeForm = new AddEmployeeForm();
+            DodajPracownikaForm addEmployeeForm = new DodajPracownikaForm();
             addEmployeeForm.ShowDialog();
 
         }
 
         private void btnUsunPracownika_Click(object sender, EventArgs e)
         {
-            RemoveEmployeeForm removeEmployeeForm = new RemoveEmployeeForm();
+            UsunPracownikaForm removeEmployeeForm = new UsunPracownikaForm();
             removeEmployeeForm.ShowDialog();
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace SzpitalApp
 {
-    partial class AddEmployeeForm
+    partial class DodajPracownikaForm
     {
         /// <summary>
         /// Required designer variable.

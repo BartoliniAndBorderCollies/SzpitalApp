@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SzpitalApp
 {
-    public partial class RemoveEmployeeForm : Form
+    public partial class UsunPracownikaForm : Form
     {
-        public RemoveEmployeeForm()
+        public UsunPracownikaForm()
         {
             this.MaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;

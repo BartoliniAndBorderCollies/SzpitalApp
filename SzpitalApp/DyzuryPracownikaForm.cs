@@ -87,7 +87,7 @@ namespace SzpitalApp
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            AddDyzurForm addDyzurForm = new AddDyzurForm(_pracownik);
+            DodajDyzurForm addDyzurForm = new DodajDyzurForm(_pracownik);
 
             if (addDyzurForm.ShowDialog() == DialogResult.OK)
             {

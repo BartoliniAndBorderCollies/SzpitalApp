@@ -1,6 +1,6 @@
 ﻿namespace SzpitalApp
 {
-    partial class RemoveEmployeeForm
+    partial class UsunPracownikaForm
     {
         /// <summary>
         /// Required designer variable.

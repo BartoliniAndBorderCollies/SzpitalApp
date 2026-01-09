@@ -32,9 +32,9 @@ namespace SzpitalApp
             string login = txtLogin.Text;
             string haslo = txtHaslo.Text;
 
-            Pracownik? pracownik = ModelSzpitala.Szpital.SzpitalInstance.Zaloguj(login, haslo);
+            Pracownik? zalogowanyPracownik = ModelSzpitala.Szpital.SzpitalInstance.Zaloguj(login, haslo);
 
-            if (pracownik == null)
+            if (zalogowanyPracownik == null)
             {
                 MessageBox.Show("Has³o lub login jest niepoprawne!", "B³êdne dane");
                 txtLogin.Clear();
@@ -43,7 +43,7 @@ namespace SzpitalApp
             }
             else
             {
-                MainPanelForm mainPanel = new MainPanelForm(pracownik);
+                MainPanelForm mainPanel = new MainPanelForm(zalogowanyPracownik);
                 mainPanel.Show();
 
                 this.Hide();
