@@ -95,6 +95,7 @@
             btnPlanDyzurow.TabIndex = 6;
             btnPlanDyzurow.Text = "Pokaż plan dyżurów danej osoby";
             btnPlanDyzurow.UseVisualStyleBackColor = false;
+            btnPlanDyzurow.Click += btnPlanDyzurow_Click;
             // 
             // btnListaPersonelu
             // 
@@ -107,6 +108,7 @@
             btnListaPersonelu.TabIndex = 5;
             btnListaPersonelu.Text = "Wyświetl listę lekarzy i pielęgniarek";
             btnListaPersonelu.UseVisualStyleBackColor = false;
+            btnListaPersonelu.Click += btnListaPersonelu_Click;
             // 
             // adminPanel
             // 

@@ -104,5 +104,16 @@ namespace SzpitalApp
             RemoveEmployeeForm removeEmployeeForm = new RemoveEmployeeForm();
             removeEmployeeForm.ShowDialog();
         }
+
+        private void btnPlanDyzurow_Click(object sender, EventArgs e)
+        {
+            WskazDyzurOsoby wskazDyzurOsoby = new WskazDyzurOsoby();
+            wskazDyzurOsoby.ShowDialog();
+        }
+
+        private void btnListaPersonelu_Click(object sender, EventArgs e)
+        {
+        
+        }
     }
 }
