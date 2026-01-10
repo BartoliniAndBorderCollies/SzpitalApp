@@ -113,7 +113,8 @@ namespace SzpitalApp
 
         private void btnListaPersonelu_Click(object sender, EventArgs e)
         {
-        
+            ListaPracownikowForm listaPracownikowForm = new ListaPracownikowForm(_zalogowany);
+            listaPracownikowForm.ShowDialog();
         }
     }
 }

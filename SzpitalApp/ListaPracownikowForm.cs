@@ -25,6 +25,33 @@ namespace SzpitalApp
             _zalogowany = zalogowany;
         }
 
+        private void SkonfigurujWidok()
+        {
+            //admin może edytować
+            if (_zalogowany is Administrator)
+            {
+                btnEdytuj.Visible = true;
+                return;
+            }
+
+            // lekarz i pielegniarka -> ograniczony widok i brak możliwości edycji
+            btnEdytuj.Visible = false;
+
+            UkryjKolumne("Pesel");
+            UkryjKolumne("NazwaUzytkownika");
+            UkryjKolumne("PWZ");
+            UkryjKolumne("Dyzury");
+            UkryjKolumne("HashHasla");
+        }
+
+        private void UkryjKolumne(string nazwaKolumny)
+        {
+            if (dataGridViewPracownicy.Columns.Contains(nazwaKolumny))
+                dataGridViewPracownicy.Columns[nazwaKolumny].Visible = false;
+
+        }
+
+
         private void ListaPracownikowForm_Load(object sender, EventArgs e)
         {
 
@@ -114,6 +141,7 @@ namespace SzpitalApp
 
             dataGridViewPracownicy.DataSource = Szpital.SzpitalInstance.DostepDoListyPracownikow;
 
+            SkonfigurujWidok();
         }
 
         private void dataGridViewPracownicy_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
