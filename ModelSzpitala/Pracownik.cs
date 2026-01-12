@@ -15,7 +15,7 @@ namespace ModelSzpitala
         public string Pesel { get; set; } //bo 11 znakowy (A int jest 10) poza tym moze zaczynac sie od 0 a int obcina zera
         public string NazwaUzytkownika { get; set; }
         public string HashHasla { get; set; }
-        public string Salt {  get; set; }
+        public string Salt { get; set; }
 
         [JsonIgnore]
         public virtual string OpisDoComboBoxu
@@ -42,8 +42,26 @@ namespace ModelSzpitala
             UstawHaslo(haslo);
         }
 
+        private void WalidujHaslo(string haslo)
+        {
+
+            if (string.IsNullOrWhiteSpace(haslo))
+                throw new ArgumentException("Hasło nie może być puste.");
+
+            if (haslo.Length < 6)
+                throw new ArgumentException("Hasło nie może być krótsze niż 6 znaków.");
+
+            if (!haslo.Any(char.IsUpper))
+                throw new ArgumentException("Hasło musi zawierać co najmniej 1 wielką literę.");
+
+            if (!haslo.Any(char.IsDigit))
+                throw new ArgumentException("Hasło musi zawierać co najmniej 1 cyfrę.");
+        }
+
         public void UstawHaslo(string haslo)
         {
+            WalidujHaslo(haslo);
+
             Salt = PasswordHasher.GenerateSalt();
             HashHasla = PasswordHasher.HashPassword(haslo, Salt);
         }

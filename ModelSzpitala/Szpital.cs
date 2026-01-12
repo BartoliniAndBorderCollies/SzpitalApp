@@ -57,7 +57,7 @@ namespace ModelSzpitala
             if (_listaPracownikow.Count == 0)
             {
                 _listaPracownikow.Add(
-                    new Administrator("admin", "admin", "00000000001", "admin", "admin"));
+                    new Administrator("admin", "admin", "00000000001", "admin", "Admin123"));
             }
         }
 

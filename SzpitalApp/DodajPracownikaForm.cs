@@ -66,20 +66,28 @@ namespace SzpitalApp
             int PWZ = 0;
             if (!int.TryParse(txtPWZ.Text, out PWZ) && rodzajPracownika == "Lekarz")
             {
-                MessageBox.Show("PWZ musi być liczbą!" ,"Niepoprawny format danych");
+                MessageBox.Show("PWZ musi być liczbą!", "Niepoprawny format danych");
                 return;
             }
 
             if (CzyPodanoWszystkieDane(rodzajPracownika, imie, nazwisko, pesel, login, haslo, specjalnosc, PWZ))
             {
-                DodajPracownika(rodzajPracownika, imie, nazwisko, pesel, login, haslo, specjalnosc, PWZ);
+
+                try
+                {
+                    DodajPracownika(rodzajPracownika, imie, nazwisko, pesel, login, haslo, specjalnosc, PWZ);
+                    this.Close();
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show(ex.Message, "Błąd danych", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
             else
             {
                 return;
             }
-            this.Close();
         }
 
         private void DodajPracownika(string rodzajPracownika, string imie, string nazwisko, string pesel, string login, string haslo, Specjalnosc specjalnosc, int PWZ)
@@ -96,7 +104,7 @@ namespace SzpitalApp
                 ModelSzpitala.Szpital.SzpitalInstance.DodajPracownika(pielegniarka);
             }
 
-            if(rodzajPracownika == "Administrator")
+            if (rodzajPracownika == "Administrator")
             {
                 Administrator administrator = new Administrator(imie, nazwisko, pesel, login, haslo);
                 ModelSzpitala.Szpital.SzpitalInstance.DodajPracownika(administrator);
