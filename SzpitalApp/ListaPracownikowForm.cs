@@ -135,7 +135,8 @@ namespace SzpitalApp
             {
                 DataPropertyName = "HashHasla",
                 HeaderText = "Zahashowane hasło",
-                Name = "HashHasla"
+                Name = "HashHasla",
+                ReadOnly = true
 
             });
 
