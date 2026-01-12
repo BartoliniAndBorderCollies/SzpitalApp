@@ -37,9 +37,23 @@ namespace ModelSzpitala
         {
             Imie = imie;
             Nazwisko = nazwisko;
-            Pesel = pesel;
+            UstawPesel(pesel);
             NazwaUzytkownika = nazwaUzytkownika;
             UstawHaslo(haslo);
+        }
+
+        private void UstawPesel(String pesel)
+        {
+            if (string.IsNullOrWhiteSpace(pesel))
+                throw new ArgumentException("Pesel nie może być pusty.");
+
+            if(!pesel.All(char.IsDigit))
+                throw new ArgumentException("Pesel nie może zawierać liter");
+
+            if (pesel.Length != 11)
+                throw new ArgumentException("PESEL musi mieć dokładnie 11 cyfr.");
+
+            Pesel = pesel;
         }
 
         private void WalidujHaslo(string haslo)
