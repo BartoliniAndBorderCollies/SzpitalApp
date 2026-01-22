@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModelSzpitala.Security;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace ModelSzpitala
         private int _ostatnieId = 1;
 
         private readonly List<Pracownik> _listaPracownikow = new List<Pracownik>();
+        private readonly List<ZdarzenieLogowania> _listaHistoriaLogowan = new List<ZdarzenieLogowania>();
 
         public static Szpital SzpitalInstance
         {
@@ -27,6 +29,20 @@ namespace ModelSzpitala
                 return _szpital;
             }
         }
+
+        public IReadOnlyList<ZdarzenieLogowania> DostepDoHistoriiLogowan
+        {
+            get
+            {
+                return _listaHistoriaLogowan;
+            }
+        }
+
+        public void DodajZdarzenieLogowania(ZdarzenieLogowania zdarzenieLogowania)
+        {
+            _listaHistoriaLogowan.Add(zdarzenieLogowania);
+        }
+
 
         public List<Pracownik> DostepDoListyPracownikow
         {
