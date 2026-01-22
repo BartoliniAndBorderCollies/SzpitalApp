@@ -36,6 +36,8 @@ namespace SzpitalApp
 
             if (zalogowanyPracownik == null)
             {
+                ModelSzpitala.Szpital.SzpitalInstance.DodajZdarzenieLogowania(new ModelSzpitala.Security.ZdarzenieLogowania(DateTime.Now, login, false));
+
                 MessageBox.Show("Has³o lub login jest niepoprawne!", "B³êdne dane");
                 txtLogin.Clear();
                 txtHaslo.Clear();
@@ -43,6 +45,8 @@ namespace SzpitalApp
             }
             else
             {
+                ModelSzpitala.Szpital.SzpitalInstance.DodajZdarzenieLogowania(new ModelSzpitala.Security.ZdarzenieLogowania(DateTime.Now, login, true));
+
                 MainPanelForm mainPanel = new MainPanelForm(zalogowanyPracownik);
                 mainPanel.Show();
 
