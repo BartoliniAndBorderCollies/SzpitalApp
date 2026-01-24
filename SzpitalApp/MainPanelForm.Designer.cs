@@ -34,6 +34,7 @@
             btnPlanDyzurow = new Button();
             btnListaPersonelu = new Button();
             adminPanel = new Panel();
+            btnHistoriaLogowan = new Button();
             btnUsunPracownika = new Button();
             btnListaPracownikow = new Button();
             btnDodajPracownika = new Button();
@@ -113,20 +114,33 @@
             // adminPanel
             // 
             adminPanel.BackColor = Color.WhiteSmoke;
+            adminPanel.Controls.Add(btnHistoriaLogowan);
             adminPanel.Controls.Add(btnUsunPracownika);
             adminPanel.Controls.Add(btnListaPracownikow);
             adminPanel.Controls.Add(btnDodajPracownika);
             adminPanel.Location = new Point(0, 17);
             adminPanel.Name = "adminPanel";
-            adminPanel.Size = new Size(300, 743);
+            adminPanel.Size = new Size(300, 800);
             adminPanel.TabIndex = 4;
+            // 
+            // btnHistoriaLogowan
+            // 
+            btnHistoriaLogowan.BackColor = SystemColors.GrayText;
+            btnHistoriaLogowan.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnHistoriaLogowan.ForeColor = SystemColors.ButtonHighlight;
+            btnHistoriaLogowan.Location = new Point(22, 620);
+            btnHistoriaLogowan.Name = "btnHistoriaLogowan";
+            btnHistoriaLogowan.Size = new Size(257, 181);
+            btnHistoriaLogowan.TabIndex = 0;
+            btnHistoriaLogowan.Text = "Wyświetl historię logowań";
+            btnHistoriaLogowan.UseVisualStyleBackColor = false;
             // 
             // btnUsunPracownika
             // 
             btnUsunPracownika.BackColor = SystemColors.GrayText;
             btnUsunPracownika.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnUsunPracownika.ForeColor = SystemColors.ButtonHighlight;
-            btnUsunPracownika.Location = new Point(23, 260);
+            btnUsunPracownika.Location = new Point(22, 203);
             btnUsunPracownika.Name = "btnUsunPracownika";
             btnUsunPracownika.Size = new Size(257, 181);
             btnUsunPracownika.TabIndex = 3;
@@ -140,7 +154,7 @@
             btnListaPracownikow.BackColor = SystemColors.GrayText;
             btnListaPracownikow.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnListaPracownikow.ForeColor = SystemColors.ButtonHighlight;
-            btnListaPracownikow.Location = new Point(23, 482);
+            btnListaPracownikow.Location = new Point(22, 414);
             btnListaPracownikow.Name = "btnListaPracownikow";
             btnListaPracownikow.Size = new Size(257, 181);
             btnListaPracownikow.TabIndex = 0;
@@ -153,7 +167,7 @@
             btnDodajPracownika.BackColor = SystemColors.GrayText;
             btnDodajPracownika.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnDodajPracownika.ForeColor = SystemColors.ButtonHighlight;
-            btnDodajPracownika.Location = new Point(23, 30);
+            btnDodajPracownika.Location = new Point(23, 0);
             btnDodajPracownika.Name = "btnDodajPracownika";
             btnDodajPracownika.Size = new Size(257, 181);
             btnDodajPracownika.TabIndex = 1;
@@ -215,5 +229,6 @@
         private Panel panelPersonel;
         private Button btnPlanDyzurow;
         private Panel adminPanel;
+        private Button btnHistoriaLogowan;
     }
 }
