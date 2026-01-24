@@ -134,6 +134,7 @@
             btnHistoriaLogowan.TabIndex = 0;
             btnHistoriaLogowan.Text = "Wyświetl historię logowań";
             btnHistoriaLogowan.UseVisualStyleBackColor = false;
+            btnHistoriaLogowan.Click += btnHistoriaLogowan_Click;
             // 
             // btnUsunPracownika
             // 

@@ -116,5 +116,11 @@ namespace SzpitalApp
             ListaPracownikowForm listaPracownikowForm = new ListaPracownikowForm(_zalogowany);
             listaPracownikowForm.ShowDialog();
         }
+
+        private void btnHistoriaLogowan_Click(object sender, EventArgs e)
+        {
+            HistoriaLogowanForm historiaLogowanForm = new HistoriaLogowanForm();
+            historiaLogowanForm.ShowDialog();
+        }
     }
 }
