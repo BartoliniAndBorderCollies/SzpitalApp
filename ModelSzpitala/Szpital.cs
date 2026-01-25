@@ -36,6 +36,13 @@ namespace ModelSzpitala
             {
                 return _listaHistoriaLogowan;
             }
+
+            set
+            {
+                _listaHistoriaLogowan.Clear();
+                if(value != null)
+                    _listaHistoriaLogowan.AddRange(value);
+            }
         }
 
         public void DodajZdarzenieLogowania(ZdarzenieLogowania zdarzenieLogowania)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ModelSzpitala.Security
@@ -12,7 +13,7 @@ namespace ModelSzpitala.Security
         private string _nazwaUsera;
         private bool _sukces;
 
-        public DateTime PobierzDate
+        public DateTime DataLogowania
         {
             get
             {
@@ -20,7 +21,7 @@ namespace ModelSzpitala.Security
             }
         }
 
-        public string PobierzNazweUsera
+        public string NazwaUsera
         {
             get
             {
@@ -36,6 +37,7 @@ namespace ModelSzpitala.Security
             }
         }
 
+        [JsonConstructor]
         public ZdarzenieLogowania(DateTime dataLogowania, string nazwaUsera, bool sukces)
         {
             _dataLogowania = dataLogowania;
