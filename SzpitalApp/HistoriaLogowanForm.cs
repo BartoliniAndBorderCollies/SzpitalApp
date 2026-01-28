@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ModelSzpitala;
+using ModelSzpitala.Security;
 
 namespace SzpitalApp
 {
@@ -37,6 +38,27 @@ namespace SzpitalApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            IReadOnlyList<ZdarzenieLogowania> ListaLogowan = Szpital.SzpitalInstance.DostepDoHistoriiLogowan;
+
+
+            using (SaveFileDialog dialog = new SaveFileDialog())
+            {
+                dialog.Title = "Zapisz historię logowań";
+                dialog.Filter = "Plik CSV (*.csv)|*.csv";
+                dialog.FileName = "historia_logowan.csv";
+
+                dialog.DefaultExt = "csv"; //wymuszenie rozszerzenia .csv
+                dialog.AddExtension = true;
+
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+
+                    string sciezkaDoZapisu = dialog.FileName;
+                    ModelSzpitala.Utils.CsvExporter.EksportujHistorieLogowan(ListaLogowan, sciezkaDoZapisu);
+
+                }
+            }
 
         }
 
