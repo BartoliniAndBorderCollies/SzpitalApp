@@ -1,0 +1,28 @@
+﻿using ModelSzpitala.Security;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ModelSzpitala.Utils
+{
+    public static class CsvExporter
+    {
+
+        public static void EksportujHistorieLogowan(IReadOnlyList<ZdarzenieLogowania> ListaLogowan, string sciezkaDoZapisu)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine("Data;User;Sukces");
+
+            foreach (ZdarzenieLogowania logowanie in ListaLogowan)
+            {
+                string linia = $"{logowanie.DataLogowania};" + $"{logowanie.NazwaUsera};" + $"{logowanie.Sukces}";
+                stringBuilder.AppendLine(linia);
+
+            }
+
+            File.WriteAllText(sciezkaDoZapisu, stringBuilder.ToString(), Encoding.UTF8);
+        }
+    }
+}
