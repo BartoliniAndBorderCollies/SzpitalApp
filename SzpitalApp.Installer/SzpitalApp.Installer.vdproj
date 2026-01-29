@@ -21,6 +21,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_AFF111666C4248A9BE96D662F28E3E5A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D8C4594AF0824DC8B9830DCF7D283072"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -50,6 +56,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -122,6 +136,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AFF111666C4248A9BE96D662F28E3E5A"
+            {
+            "SourcePath" = "8:..\\SzpitalApp\\bin\\Release\\net9.0-windows\\SzpitalApp.exe"
+            "TargetName" = "8:SzpitalApp.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_41BF1341B27742E8885B88A4EF3839E8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D8C4594AF0824DC8B9830DCF7D283072"
             {
             "SourcePath" = "8:..\\..\\..\\..\\OneDrive\\Pulpit\\ikonka.ico"
@@ -198,15 +232,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SzpitalApp"
-        "ProductCode" = "8:{F65A128C-F56F-4C07-9160-E6E3A65CF339}"
-        "PackageCode" = "8:{FA12D34D-EB04-4873-8E3E-BF78311F8272}"
+        "ProductCode" = "8:{90D269C9-D559-4027-853A-6A79A36FEADA}"
+        "PackageCode" = "8:{A54BA0AC-0D8B-4679-974C-1A2EEC48A9BA}"
         "UpgradeCode" = "8:{111D4772-0630-4EAA-B965-2E14742357A5}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:FALSE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.3"
         "Manufacturer" = "8:BK"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -319,6 +353,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B77CA9AE0C1F45BF996296F72B6A4CF8"
+            {
+            "Name" = "8:Skrót do SzpitalApp.exe"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_AFF111666C4248A9BE96D662F28E3E5A"
+            "Folder" = "8:_83C4F585B36B4BB6BE66FBD1A4BA67BD"
+            "WorkingFolder" = "8:_41BF1341B27742E8885B88A4EF3839E8"
+            "Icon" = "8:_D8C4594AF0824DC8B9830DCF7D283072"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
