@@ -27,10 +27,10 @@ namespace SzpitalApp
 
             foreach (DataGridViewColumn kolumna in dataGridViewHistoriaLogowan.Columns)
             {
-                if (kolumna.DataPropertyName == "PobierzDate")
+                if (kolumna.DataPropertyName == nameof(ZdarzenieLogowania.DataLogowania))
                     kolumna.HeaderText = "Data";
 
-                if (kolumna.DataPropertyName == "PobierzNazweUsera")
+                if (kolumna.DataPropertyName == nameof(ZdarzenieLogowania.NazwaUsera))
                     kolumna.HeaderText = "User";
 
             }
