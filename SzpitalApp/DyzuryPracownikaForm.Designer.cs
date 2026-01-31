@@ -33,6 +33,7 @@
             btnDodaj = new Button();
             btnUsun = new Button();
             btnZamknij = new Button();
+            btnExport = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDyzury).BeginInit();
             SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             btnDodaj.BackColor = SystemColors.GrayText;
             btnDodaj.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnDodaj.ForeColor = SystemColors.ButtonHighlight;
-            btnDodaj.Location = new Point(626, 94);
+            btnDodaj.Location = new Point(626, 65);
             btnDodaj.Name = "btnDodaj";
             btnDodaj.Size = new Size(150, 82);
             btnDodaj.TabIndex = 2;
@@ -76,7 +77,7 @@
             btnUsun.BackColor = SystemColors.GrayText;
             btnUsun.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnUsun.ForeColor = SystemColors.ButtonHighlight;
-            btnUsun.Location = new Point(626, 216);
+            btnUsun.Location = new Point(626, 183);
             btnUsun.Name = "btnUsun";
             btnUsun.Size = new Size(150, 82);
             btnUsun.TabIndex = 3;
@@ -86,7 +87,7 @@
             // 
             // btnZamknij
             // 
-            btnZamknij.Location = new Point(626, 349);
+            btnZamknij.Location = new Point(626, 383);
             btnZamknij.Name = "btnZamknij";
             btnZamknij.Size = new Size(150, 46);
             btnZamknij.TabIndex = 4;
@@ -94,12 +95,26 @@
             btnZamknij.UseVisualStyleBackColor = true;
             btnZamknij.Click += btnZamknij_Click;
             // 
+            // btnExport
+            // 
+            btnExport.BackColor = SystemColors.GrayText;
+            btnExport.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnExport.ForeColor = SystemColors.ButtonHighlight;
+            btnExport.Location = new Point(626, 303);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(150, 46);
+            btnExport.TabIndex = 5;
+            btnExport.Text = "Eksportuj";
+            btnExport.UseVisualStyleBackColor = false;
+            btnExport.Click += btnExport_Click;
+            // 
             // DyzuryPracownikaForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnExport);
             Controls.Add(btnZamknij);
             Controls.Add(btnUsun);
             Controls.Add(btnDodaj);
@@ -119,5 +134,6 @@
         private Button btnDodaj;
         private Button btnUsun;
         private Button btnZamknij;
+        private Button btnExport;
     }
 }

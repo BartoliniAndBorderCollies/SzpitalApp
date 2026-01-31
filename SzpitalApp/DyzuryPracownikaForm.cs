@@ -1,4 +1,5 @@
 ﻿using ModelSzpitala;
+using ModelSzpitala.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -169,5 +170,23 @@ namespace SzpitalApp
             }
         }
 
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            IReadOnlyList<Dyzur> listaDyzurow = _bindingDyzurow;
+ 
+            using (SaveFileDialog dialog = new SaveFileDialog())
+            {
+                dialog.Title = "Zapisz listę dyżurów";
+                dialog.Filter = "Plik CSV (*.csv)|*.csv";
+                dialog.FileName = "lista_dyzurow.csv";
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    string sciezkaDoZapisu = dialog.FileName;
+                    CsvExporter.EksportujListeDyzurowDanejOsoby(listaDyzurow, sciezkaDoZapisu);
+
+                }
+            }
+        }
     }
 }
