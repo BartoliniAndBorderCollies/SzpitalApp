@@ -173,17 +173,19 @@ namespace SzpitalApp
         private void btnExport_Click(object sender, EventArgs e)
         {
             IReadOnlyList<Dyzur> listaDyzurow = _bindingDyzurow;
+            string imie = _pracownik.Imie;
+            string nazwisko = _pracownik.Nazwisko;
  
             using (SaveFileDialog dialog = new SaveFileDialog())
             {
                 dialog.Title = "Zapisz listę dyżurów";
                 dialog.Filter = "Plik CSV (*.csv)|*.csv";
-                dialog.FileName = "lista_dyzurow.csv";
+                dialog.FileName = $"lista_dyzurow_{imie}_{nazwisko}.csv";
 
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     string sciezkaDoZapisu = dialog.FileName;
-                    CsvExporter.EksportujListeDyzurowDanejOsoby(listaDyzurow, sciezkaDoZapisu);
+                    CsvExporter.EksportujListeDyzurowDanejOsoby(listaDyzurow, sciezkaDoZapisu, _pracownik);
 
                 }
             }
