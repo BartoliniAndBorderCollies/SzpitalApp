@@ -9,11 +9,11 @@ namespace ModelSzpitala
     public class AuditWpis
     {
 
-        private int _userId;
+        private int? _userId;
         private Akcja _rodzajAkcji;
         private DateTime _data;
 
-        public AuditWpis(int userId, Akcja rodzajAkcji, DateTime data)
+        public AuditWpis(int? userId, Akcja rodzajAkcji, DateTime data)
         {
             _userId = userId;
             _rodzajAkcji = rodzajAkcji;
@@ -21,7 +21,7 @@ namespace ModelSzpitala
 
         }
 
-        public int DostepDoUserId
+        public int? DostepDoUserId
         {
             get
             {

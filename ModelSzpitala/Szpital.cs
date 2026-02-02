@@ -41,7 +41,7 @@ namespace ModelSzpitala
             set
             {
                 _listaHistoriaLogowan.Clear();
-                if(value != null)
+                if (value != null)
                     _listaHistoriaLogowan.AddRange(value);
             }
         }
@@ -57,7 +57,7 @@ namespace ModelSzpitala
             set
             {
                 _listaAuditWpisow.Clear();
-                if(value!= null)
+                if (value != null)
                 {
                     _listaAuditWpisow.AddRange(value);
                 }
@@ -253,12 +253,13 @@ namespace ModelSzpitala
             return null;
         }
 
-        public void ZarejestrujZdarzenieWsystemie(int id, Akcja rodzajAKcji, DateTime czas)
+        public void ZarejestrujZdarzenieWsystemie(int? id, Akcja rodzajAKcji)
         {
 
             AuditWpis auditWpis = new AuditWpis(id, rodzajAKcji, DateTime.Now);
-
             _listaAuditWpisow.Add(auditWpis);
+
+
         }
     }
 }
