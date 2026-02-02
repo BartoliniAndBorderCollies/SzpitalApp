@@ -37,6 +37,7 @@ namespace SzpitalApp
             if (zalogowanyPracownik == null)
             {
                 ModelSzpitala.Szpital.SzpitalInstance.DodajZdarzenieLogowania(new ModelSzpitala.Security.ZdarzenieLogowania(DateTime.Now, login, false));
+                ModelSzpitala.Szpital.SzpitalInstance.ZarejestrujZdarzenieWsystemie(null, Akcja.Logowanie);
 
                 MessageBox.Show("Has³o lub login jest niepoprawne!", "B³êdne dane");
                 txtLogin.Clear();
