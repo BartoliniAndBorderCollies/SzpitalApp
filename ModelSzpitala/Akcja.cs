@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModelSzpitala
 {
-    internal enum Akcja
+    public enum Akcja
     {
         Logowanie,
 

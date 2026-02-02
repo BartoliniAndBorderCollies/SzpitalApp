@@ -17,6 +17,7 @@ namespace ModelSzpitala
 
         private readonly List<Pracownik> _listaPracownikow = new List<Pracownik>();
         private readonly List<ZdarzenieLogowania> _listaHistoriaLogowan = new List<ZdarzenieLogowania>();
+        private readonly List<AuditWpis> _listaAuditWpisow = new List<AuditWpis>();
 
         public static Szpital SzpitalInstance
         {
@@ -42,6 +43,24 @@ namespace ModelSzpitala
                 _listaHistoriaLogowan.Clear();
                 if(value != null)
                     _listaHistoriaLogowan.AddRange(value);
+            }
+        }
+
+        public IReadOnlyList<AuditWpis> DostepDoListyAuditWpisow
+        {
+
+            get
+            {
+                return _listaAuditWpisow;
+            }
+
+            set
+            {
+                _listaAuditWpisow.Clear();
+                if(value!= null)
+                {
+                    _listaAuditWpisow.AddRange(value);
+                }
             }
         }
 
@@ -232,6 +251,14 @@ namespace ModelSzpitala
 
             }
             return null;
+        }
+
+        public void ZarejestrujZdarzenieWsystemie(int id, Akcja rodzajAKcji, DateTime czas)
+        {
+
+            AuditWpis auditWpis = new AuditWpis(id, rodzajAKcji, DateTime.Now);
+
+            _listaAuditWpisow.Add(auditWpis);
         }
     }
 }

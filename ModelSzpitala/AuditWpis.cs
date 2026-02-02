@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModelSzpitala
 {
-    internal class AuditWpis
+    public class AuditWpis
     {
 
         private int _userId;
