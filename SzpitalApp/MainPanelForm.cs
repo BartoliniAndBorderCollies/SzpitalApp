@@ -44,6 +44,8 @@ namespace SzpitalApp
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
+            bool czyUdany = true;
+
             var decyzja = MessageBox.Show(
                 "Czy na pewno chcesz zakończyć program?",
                 "Zamykanie aplikacji",
@@ -62,13 +64,18 @@ namespace SzpitalApp
             }
             catch (Exception exception)
             {
+
+                czyUdany = false;
+
                 MessageBox.Show(
                     "Błąd zapisu danych:\n" + exception.Message,
                     "Błąd",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+
             }
 
+            ModelSzpitala.Szpital.SzpitalInstance.ZarejestrujZdarzenieWsystemie(_zalogowany.Id, Akcja.ZamkniecieProgramu, czyUdany);
             base.OnFormClosing(e);
         }
 
