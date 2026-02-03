@@ -12,13 +12,14 @@ namespace ModelSzpitala
         private int? _userId;
         private Akcja _rodzajAkcji;
         private DateTime _data;
+        private bool sukces;
 
-        public AuditWpis(int? userId, Akcja rodzajAkcji, DateTime data)
+        public AuditWpis(int? userId, Akcja rodzajAkcji, DateTime data, bool sukces)
         {
             _userId = userId;
             _rodzajAkcji = rodzajAkcji;
             _data = data;
-
+            this.sukces = sukces;
         }
 
         public int? DostepDoUserId
@@ -42,6 +43,14 @@ namespace ModelSzpitala
             get
             {
                 return _data;
+            }
+        }
+
+        public bool DostepDoSukces
+        {
+            get
+            {
+                return sukces;
             }
         }
     }

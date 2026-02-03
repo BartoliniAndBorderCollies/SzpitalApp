@@ -253,10 +253,10 @@ namespace ModelSzpitala
             return null;
         }
 
-        public void ZarejestrujZdarzenieWsystemie(int? id, Akcja rodzajAKcji)
+        public void ZarejestrujZdarzenieWsystemie(int? id, Akcja rodzajAKcji, bool sukces)
         {
 
-            AuditWpis auditWpis = new AuditWpis(id, rodzajAKcji, DateTime.Now);
+            AuditWpis auditWpis = new AuditWpis(id, rodzajAKcji, DateTime.Now, sukces);
             _listaAuditWpisow.Add(auditWpis);
 
 
