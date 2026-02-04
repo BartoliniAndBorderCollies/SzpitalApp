@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ModelSzpitala
@@ -14,6 +15,7 @@ namespace ModelSzpitala
         private DateTime _data;
         private bool sukces;
 
+        [JsonConstructor]
         public AuditWpis(int? userId, Akcja rodzajAkcji, DateTime data, bool sukces)
         {
             _userId = userId;
