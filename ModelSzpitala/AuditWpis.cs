@@ -16,6 +16,11 @@ namespace ModelSzpitala
         private bool sukces;
 
         [JsonConstructor]
+        public AuditWpis() 
+        {
+        
+        }
+
         public AuditWpis(int? userId, Akcja rodzajAkcji, DateTime data, bool sukces)
         {
             _userId = userId;
