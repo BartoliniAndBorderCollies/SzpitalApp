@@ -45,6 +45,7 @@ namespace SzpitalApp
         {
             IReadOnlyList<ZdarzenieLogowania> ListaLogowan = Szpital.SzpitalInstance.DostepDoHistoriiLogowan;
 
+            bool CzyUdane = false;
 
             using (SaveFileDialog dialog = new SaveFileDialog())
             {
@@ -61,9 +62,12 @@ namespace SzpitalApp
 
                     string sciezkaDoZapisu = dialog.FileName;
                     ModelSzpitala.Utils.CsvExporter.EksportujHistorieLogowan(ListaLogowan, sciezkaDoZapisu);
+                    CzyUdane = true;
 
                 }
             }
+
+            Szpital.SzpitalInstance.ZarejestrujZdarzenieWsystemie(_zalogowany.Id, Akcja.EkportHistoriiLogowan, CzyUdane);
 
         }
 
