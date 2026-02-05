@@ -125,7 +125,7 @@ namespace SzpitalApp
 
         private void btnHistoriaLogowan_Click(object sender, EventArgs e)
         {
-            HistoriaLogowanForm historiaLogowanForm = new HistoriaLogowanForm();
+            HistoriaLogowanForm historiaLogowanForm = new HistoriaLogowanForm(_zalogowany);
             historiaLogowanForm.ShowDialog();
         }
     }

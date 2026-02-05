@@ -14,11 +14,14 @@ namespace SzpitalApp
 {
     public partial class HistoriaLogowanForm : Form
     {
-        public HistoriaLogowanForm()
+        private Pracownik _zalogowany;
+
+        public HistoriaLogowanForm(Pracownik zalogowany)
         {
             this.MaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
+            this._zalogowany = zalogowany;
         }
 
         private void HistoriaLogowanForm_Load(object sender, EventArgs e)
@@ -34,6 +37,8 @@ namespace SzpitalApp
                     kolumna.HeaderText = "User";
 
             }
+
+            Szpital.SzpitalInstance.ZarejestrujZdarzenieWsystemie(_zalogowany.Id, Akcja.WyswietlenieHistoriiLogowan, true);
         }
 
         private void button1_Click(object sender, EventArgs e)
