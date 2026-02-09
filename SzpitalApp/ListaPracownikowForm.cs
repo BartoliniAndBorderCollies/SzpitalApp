@@ -143,6 +143,8 @@ namespace SzpitalApp
             dataGridViewPracownicy.DataSource = Szpital.SzpitalInstance.DostepDoListyPracownikow;
 
             SkonfigurujWidok();
+
+            Szpital.SzpitalInstance.ZarejestrujZdarzenieWsystemie(_zalogowany.Id, Akcja.WyswietlenieListePracownikow, true);
         }
 
         private void dataGridViewPracownicy_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -180,6 +182,8 @@ namespace SzpitalApp
 
                 var form = new DyzuryPracownikaForm(_zalogowany, pracownik);
                 form.ShowDialog();
+
+                Szpital.SzpitalInstance.ZarejestrujZdarzenieWsystemie(_zalogowany.Id, Akcja.WyswietlenieDyzurow, true);
             }
         }
 
@@ -221,6 +225,8 @@ namespace SzpitalApp
 
                     MessageBox.Show("Zmiany zapisane", "Informacja");
                 }
+
+                Szpital.SzpitalInstance.ZarejestrujZdarzenieWsystemie(_zalogowany.Id, Akcja.EdycjaListyPracownikow, true);
             }
         }
     }
