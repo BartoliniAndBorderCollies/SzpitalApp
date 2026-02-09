@@ -20,6 +20,8 @@ namespace ModelSzpitala
 
         WyswietlenieListePracownikow,
 
+        EdycjaListyPracownikow,
+
         WyswietlenieDyzurow,
 
         DodanieDyzuru,
