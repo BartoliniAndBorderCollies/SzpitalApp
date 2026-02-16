@@ -100,7 +100,7 @@ namespace SzpitalApp
 
         private void btnDodajPracownika_Click(object sender, EventArgs e)
         {
-            DodajPracownikaForm addEmployeeForm = new DodajPracownikaForm();
+            DodajPracownikaForm addEmployeeForm = new DodajPracownikaForm(_zalogowany);
             addEmployeeForm.ShowDialog();
 
         }

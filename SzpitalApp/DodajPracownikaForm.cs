@@ -16,13 +16,17 @@ namespace SzpitalApp
 {
     public partial class DodajPracownikaForm : BaseForm
     {
-        public DodajPracownikaForm()
+
+        private Pracownik _zalogowany;
+
+        public DodajPracownikaForm(Pracownik zalogowany)
         {
             InitializeComponent();
 
             cmbSpecjalnosc.DataSource = Enum.GetValues(typeof(Specjalnosc));
             cmbSpecjalnosc.Hide();
             txtPWZ.Hide();
+            _zalogowany = zalogowany;
         }
 
         private void cmbRodzajPracownika_SelectedIndexChanged(object sender, EventArgs e)
@@ -76,16 +80,21 @@ namespace SzpitalApp
                 try
                 {
                     DodajPracownika(rodzajPracownika, imie, nazwisko, pesel, login, haslo, specjalnosc, PWZ);
+
+                    Szpital.SzpitalInstance.ZarejestrujZdarzenieWsystemie(_zalogowany.Id, Akcja.DodaniePracownika, true);
+
                     this.Close();
                 }
                 catch (ArgumentException ex)
                 {
+                    Szpital.SzpitalInstance.ZarejestrujZdarzenieWsystemie(_zalogowany.Id, Akcja.DodaniePracownika, false);
                     MessageBox.Show(ex.Message, "Błąd danych", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             else
             {
+                Szpital.SzpitalInstance.ZarejestrujZdarzenieWsystemie(_zalogowany.Id, Akcja.DodaniePracownika, false);
                 return;
             }
         }
