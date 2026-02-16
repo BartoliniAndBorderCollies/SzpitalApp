@@ -107,7 +107,7 @@ namespace SzpitalApp
 
         private void btnUsunPracownika_Click(object sender, EventArgs e)
         {
-            UsunPracownikaForm removeEmployeeForm = new UsunPracownikaForm();
+            UsunPracownikaForm removeEmployeeForm = new UsunPracownikaForm(_zalogowany);
             removeEmployeeForm.ShowDialog();
         }
 

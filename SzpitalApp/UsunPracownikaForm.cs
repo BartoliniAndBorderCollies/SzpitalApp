@@ -13,8 +13,11 @@ namespace SzpitalApp
 {
     public partial class UsunPracownikaForm : Form
     {
-        public UsunPracownikaForm()
+        private Pracownik _zalogowany;
+
+        public UsunPracownikaForm(Pracownik zalogowany)
         {
+            this._zalogowany = zalogowany;
             this.MaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
@@ -32,12 +35,17 @@ namespace SzpitalApp
                 {
                     Szpital.SzpitalInstance.UsunPracownika(pesel);
                     MessageBox.Show("Pomyślnie usunięto pracownika!", "Potwierdzenie");
+
+                    Szpital.SzpitalInstance.ZarejestrujZdarzenieWsystemie(_zalogowany.Id, Akcja.UsunieciePracownika, true);
+
                     this.Close();
                     return;
                 }
             }
-                MessageBox.Show("Nie znaleziono pracownika z podanym numerem PESEL", "Informacja");
-                return;
+
+            MessageBox.Show("Nie znaleziono pracownika z podanym numerem PESEL", "Informacja");
+            Szpital.SzpitalInstance.ZarejestrujZdarzenieWsystemie(_zalogowany.Id, Akcja.UsunieciePracownika, false);
+            return;
         }
 
         private void btnAnuluj_Click(object sender, EventArgs e)
