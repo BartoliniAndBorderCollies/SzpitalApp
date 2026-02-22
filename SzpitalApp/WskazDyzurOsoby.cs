@@ -59,6 +59,8 @@ namespace SzpitalApp
 
             }
 
+            Szpital.SzpitalInstance.ZarejestrujZdarzenieWsystemie(_zalogowany.Id, Akcja.WyswietlenieDyzurow, true);
+
             DyzuryPracownikaForm dyzuryPracownikaForm = new DyzuryPracownikaForm(_zalogowany, pracownik);
             dyzuryPracownikaForm.ShowDialog();
 
