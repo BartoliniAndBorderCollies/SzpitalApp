@@ -29,7 +29,7 @@ namespace ModelSzpitala
             this.sukces = sukces;
         }
 
-        public int? DostepDoUserId
+        public int? UserId
         {
             get
             {
@@ -37,7 +37,7 @@ namespace ModelSzpitala
             }
         }
 
-        public Akcja DostepDoRodzajAkcji
+        public Akcja RodzajAkcji
         {
             get
             {
@@ -53,7 +53,7 @@ namespace ModelSzpitala
             }
         }
 
-        public bool DostepDoSukces
+        public bool Sukces
         {
             get
             {

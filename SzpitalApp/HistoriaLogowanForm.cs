@@ -26,7 +26,7 @@ namespace SzpitalApp
 
         private void HistoriaLogowanForm_Load(object sender, EventArgs e)
         {
-            dataGridViewHistoriaLogowan.DataSource = Szpital.SzpitalInstance.DostepDoHistoriiLogowan;
+            dataGridViewHistoriaLogowan.DataSource = Szpital.SzpitalInstance.HistoriaLogowan;
 
             foreach (DataGridViewColumn kolumna in dataGridViewHistoriaLogowan.Columns)
             {
@@ -43,7 +43,7 @@ namespace SzpitalApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            IReadOnlyList<ZdarzenieLogowania> ListaLogowan = Szpital.SzpitalInstance.DostepDoHistoriiLogowan;
+            IReadOnlyList<ZdarzenieLogowania> ListaLogowan = Szpital.SzpitalInstance.HistoriaLogowan;
 
             bool CzyUdane = false;
 

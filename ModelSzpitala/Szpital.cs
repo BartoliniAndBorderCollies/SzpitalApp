@@ -31,7 +31,7 @@ namespace ModelSzpitala
             }
         }
 
-        public IReadOnlyList<ZdarzenieLogowania> DostepDoHistoriiLogowan
+        public IReadOnlyList<ZdarzenieLogowania> HistoriaLogowan
         {
             get
             {
@@ -46,7 +46,7 @@ namespace ModelSzpitala
             }
         }
 
-        public IReadOnlyList<AuditWpis> DostepDoListyAuditWpisow
+        public IReadOnlyList<AuditWpis> ListaZdarzenSystemowych
         {
 
             get
